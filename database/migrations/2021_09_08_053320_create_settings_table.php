@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateServicesTable extends Migration
+class CreateSettingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,14 @@ class CreateServicesTable extends Migration
      */
     public function up()
     {
-        Schema::create('services', function (Blueprint $table) {
+        Schema::create('settings', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id')->nullable()->comment('foregin key');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->string('title')->nullable()->comment='Stores Title';
-            $table->string('description')->nullable()->comment='Stores Description';
-            $table->string('color')->nullable()->comment='Stores Color';
-            $table->string('image')->default("https://cdn2.iconfinder.com/data/icons/e-commerce-line-4-1/1024/open_box4-512.png")->comment="Stores Image Link";
-            $table->integer('position')->nullable()->comment='Stores position';
+            $table->string('option_name')->nullable()->comment='Stores Option Name';
+            $table->text('option_value')->nullable()->comment='Stores Option Value';
+            $table->mediumText('postal_code')->nullable()->comment='Stores Postalcode';
             $table->text('slug')->nullable()->comment='Stores Slug';
             $table->string('created_by')->nullable()->comment='Stores username who created';
             $table->string('updated_by')->nullable()->comment='Stores username who updated';
-            $table->boolean('is_activate')->default(false);
             $table->softDeletes()->comment='Add Deleted at timestamp';
             $table->timestamp('created_at')->nullable()->comment='Stores created at time';
             $table->timestamp('updated_at')->nullable()->comment='Stores updated at time';
@@ -39,6 +34,6 @@ class CreateServicesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('services');
+        Schema::dropIfExists('settings');
     }
 }
