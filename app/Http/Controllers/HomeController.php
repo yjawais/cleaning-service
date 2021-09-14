@@ -27,10 +27,12 @@ class HomeController extends Controller
 
             $route_path=$this->user()->roles[0]['route_path'];
             if($this->user()->roles[0]['name'] == "user"){
-                return view('welcome'); 
+                return view('role.user.home'); 
             }else if($this->user()->roles[0]['name'] == "admin"){
               return view('role.admin.home');
-              }else{
+              }else if($this->user()->roles[0]['name'] == "staff"){
+                return view('role.staff.home');
+                }else{
                 return view('welcome');
               }
             return view($route_path);
