@@ -15,10 +15,10 @@ class CreateTransferRequestsTable extends Migration
     {
         Schema::create('transfer_requests', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('request_id');
+            $table->string('request_id');
             $table->integer('staff_id')->comment('stores the staff id');
             $table->string('email_id')->nullable()->comment('stores the email id');
-            $table->integer('request_amount')->comment('stores the requested amount');
+            $table->double('request_amount')->comment('stores the requested amount');
             $table->boolean('is_active')->default(true)->comment('stores the status');
             $table->timestamp('created_at')->useCurrent()->comment('stores created at');
             $table->timestamp('updated_at')->useCurrent()->comment('stores updated at');

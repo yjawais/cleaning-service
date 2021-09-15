@@ -15,8 +15,6 @@ class CreateSmsUsersTable extends Migration
     {
         Schema::create('sms_users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id')->unsigned()->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
             $table->text('cus_ids')->comment('stores the id of the customer');
             $table->text('cus_msg')->comment('stores the customer message');
             $table->timestamp('cus_dt')->useCurrent()->comment('stores the date');

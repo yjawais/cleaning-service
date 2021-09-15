@@ -16,7 +16,7 @@ class CreateRecurringStatusTable extends Migration
         Schema::create('recurring_status', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('recurring_id')->comment('stores the recurring id');
-            $table->enum('status',['Accepted','Decline'])->nullable()->comment('stores the recurring status');
+            $table->enum('status',['Accepted','Decline','Pending'])->default('Pending')->comment('stores the recurring status');
             $table->timestamp('created_at')->nullable()->comment('stores created at');
             $table->timestamp('updated_at')->nullable()->comment('stores updated at');
             $table->string('created_by')->nullable()->comment('Stores created by');

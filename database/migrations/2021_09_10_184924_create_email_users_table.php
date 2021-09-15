@@ -15,8 +15,6 @@ class CreateEmailUsersTable extends Migration
     {
         Schema::create('email_users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id')->unsigned()->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
             $table->text('cus_ids')->nullable()->comment('stores customer ids');
             $table->string('cus_sub')->nullable()->comment('stores customer subject');
             $table->text('cus_msg')->nullable()->comment('stores customer message');
