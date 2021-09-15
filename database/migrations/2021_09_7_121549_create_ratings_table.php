@@ -17,8 +17,10 @@ class CreateRatingsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users');
-           
-            $table->text('review')->nullable(); 
+            $table->unsignedBigInteger('staff_id')->unsigned()->nullable();
+            $table->foreign('staff_id')->references('id')->on('staff_details');
+            $table->string('order_id')->nullable()->comment('stores the order id');
+            $table->text('review')->nullable()->comment('stores review'); 
             $table->tinyInteger('rating')->nullable(); 
             $table->timestamp('review_date')->useCurrent();
             $table->softDeletes()->nullable()->comment('stores deleted at time and date of user');
@@ -27,6 +29,8 @@ class CreateRatingsTable extends Migration
             $table->boolean('is_activate')->default(true);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
+            $table->string('created_by')->nullable()->comment('Stores created by');
+            $table->string('updated_by')->nullable()->comment('Stores updated by');
         });
     }
 
