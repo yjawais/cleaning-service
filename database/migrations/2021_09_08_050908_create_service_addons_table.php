@@ -15,8 +15,6 @@ class CreateServiceAddonsTable extends Migration
     {
         Schema::create('service_addons', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id')->nullable()->comment('foregin key');
-            $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('service_id')->unsigned()->nullable()->comment = 'forign key of serviceid';
             $table->foreign('service_id')->references('id')->on('services');
             $table->string('service_name')->nullable()->comment='Stores Addon Servicename';
