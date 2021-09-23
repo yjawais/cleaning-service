@@ -19,7 +19,7 @@ class CreateUserDetailsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('date_of_birth')->nullable()->comment = 'store date of birth';
             $table->string('gender')->nullable()->comment = 'store gender';
-            $table->string('profile_image')->nullable();
+            $table->string('profile_image')->default("https://cdn2.iconfinder.com/data/icons/e-commerce-line-4-1/1024/open_box4-512.png");
             $table->unsignedBigInteger('address_id')->unsigned()->nullable()->comment = 'forign key of address';
             $table->foreign('address_id')->references('id')->on('address_details');
             $table->string('folder_name')->nullable();
