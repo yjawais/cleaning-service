@@ -15,9 +15,9 @@ class CreateServiceMethodsDesignsTable extends Migration
     {
         Schema::create('service_methods_designs', function (Blueprint $table) {
             $table->bigIncrements('id');
-           $table->unsignedBigInteger('service_methods_id')->unsigned()->nullable();
+            $table->unsignedBigInteger('service_methods_id')->unsigned()->nullable();
             $table->foreign('service_methods_id')->references('id')->on('service_methods_units');
-           $table->integer('design')->nullable()->comment='Stores Design';
+            $table->integer('design')->nullable()->comment='Stores Design';
             $table->string('created_by')->nullable()->comment='Stores username who created';
             $table->string('updated_by')->nullable()->comment='Stores username who updated';
             $table->softDeletes()->comment='Add Deleted at timestamp';
