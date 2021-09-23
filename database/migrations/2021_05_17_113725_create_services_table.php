@@ -15,8 +15,6 @@ class CreateServicesTable extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id')->nullable()->comment('foregin key');
-            $table->foreign('user_id')->references('id')->on('users');
             $table->string('title')->nullable()->comment='Stores Title';
             $table->string('description')->nullable()->comment='Stores Description';
             $table->string('color')->nullable()->comment='Stores Color';

@@ -18,7 +18,7 @@ class PaymentTransactionSeeder extends Seeder
         $user3 = new PaymentTransaction;
         $user3->id = "3";
         $user3->order_id = "999";
-        $user3->payment_method = "Pay At Venue";
+        $user3->payment_mode = "Pay At Venue";
         $user3->transaction_id = "";
         $user3->amount = "55";
         $user3->discount = "0";
@@ -35,7 +35,7 @@ class PaymentTransactionSeeder extends Seeder
         $user4 = new PaymentTransaction;
         $user4->id = "4";
         $user4->order_id = "1000";
-        $user4->payment_method = "Pay At Venue";
+        $user4->payment_mode = "Pay At Venue";
         $user4->transaction_id = "";
         $user4->amount = "74";
         $user4->discount = "0";

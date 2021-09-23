@@ -31,7 +31,7 @@ class BookingSeeder extends Seeder
         $booking1->reminder_status="0";
         $booking1->last_modify="2021-06-13 11:38:50";
         $booking1->read_status="U";
-        $booking1->staff_ids="3";
+        $booking1->staff_detail_ids="3";
         $booking1->gc_event_id="";
         $booking1->gc_staff_event_id="";
         $booking1->save();
@@ -52,7 +52,7 @@ class BookingSeeder extends Seeder
         $booking2->reminder_status="0";
         $booking2->last_modify="2021-06-14 12:38:50";
         $booking2->read_status="U";
-        $booking2->staff_ids="4";
+        $booking2->staff_detail_ids="4";
         $booking2->gc_event_id="";
         $booking2->gc_staff_event_id="";
         $booking2->save();
@@ -73,7 +73,7 @@ class BookingSeeder extends Seeder
         $booking3->reminder_status="0";
         $booking3->last_modify="2021-06-15 11:38:50";
         $booking3->read_status="R";
-        $booking3->staff_ids="5";
+        $booking3->staff_detail_ids="5";
         $booking3->gc_event_id="";
         $booking3->gc_staff_event_id="";
         $booking3->save();
@@ -94,7 +94,7 @@ class BookingSeeder extends Seeder
         $booking4->reminder_status="0";
         $booking4->last_modify="2021-06-16 11:38:50";
         $booking4->read_status="U";
-        $booking4->staff_ids="6";
+        $booking4->staff_detail_ids="6";
         $booking4->gc_event_id="";
         $booking4->gc_staff_event_id="";
         $booking4->save();
@@ -115,7 +115,7 @@ class BookingSeeder extends Seeder
         $booking5->reminder_status="0";
         $booking5->last_modify="2021-06-17 17:38:50";
         $booking5->read_status="U";
-        $booking5->staff_ids="7";
+        $booking5->staff_detail_ids="7";
         $booking5->gc_event_id="";
         $booking5->gc_staff_event_id="";
         $booking5->save();
@@ -136,7 +136,7 @@ class BookingSeeder extends Seeder
         $booking6->reminder_status="1";
         $booking6->last_modify="2021-06-15 11:38:50";
         $booking6->read_status="R";
-        $booking6->staff_ids="8";
+        $booking6->staff_detail_ids="8";
         $booking6->gc_event_id="";
         $booking6->gc_staff_event_id="";
         $booking6->save();
@@ -157,7 +157,7 @@ class BookingSeeder extends Seeder
         $booking7->reminder_status="0";
         $booking7->last_modify="2021-06-18 11:38:50";
         $booking7->read_status="U";
-        $booking7->staff_ids="9";
+        $booking7->staff_detail_ids="9";
         $booking7->gc_event_id="";
         $booking7->gc_staff_event_id="";
         $booking7->save();
@@ -178,7 +178,7 @@ class BookingSeeder extends Seeder
         $booking8->reminder_status="1";
         $booking8->last_modify="2021-06-18 11:38:50";
         $booking8->read_status="R";
-        $booking8->staff_ids="10";
+        $booking8->staff_detail_ids="10";
         $booking8->gc_event_id="";
         $booking8->gc_staff_event_id="";
         $booking8->save();
@@ -199,7 +199,7 @@ class BookingSeeder extends Seeder
         $booking9->reminder_status="0";
         $booking9->last_modify="2021-06-19 11:38:50";
         $booking9->read_status="U";
-        $booking9->staff_ids="10";
+        $booking9->staff_detail_ids="10";
         $booking9->gc_event_id="";
         $booking9->gc_staff_event_id="";
         $booking9->save();
@@ -220,7 +220,7 @@ class BookingSeeder extends Seeder
         $booking10->reminder_status="0";
         $booking10->last_modify="2021-06-19 13:38:50";
         $booking10->read_status="U";
-        $booking10->staff_ids="11";
+        $booking10->staff_detail_ids="11";
         $booking10->gc_event_id="";
         $booking10->gc_staff_event_id="";
         $booking10->save();
