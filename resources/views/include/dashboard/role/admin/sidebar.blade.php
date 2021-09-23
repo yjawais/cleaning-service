@@ -90,6 +90,13 @@
                   </li>
 
                   <li class="nav-item">
+                    <a href="" class="nav-link">
+                      <span class="sidenav-mini-icon"> S </span>
+                      <span class="sidenav-normal">Schedule</span>
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
                     <a href="#navbar-multilevel-user" class="nav-link" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-multilevel-user">
                       <span class="sidenav-mini-icon"> U </span>
                       <span class="sidenav-normal"> User </span>

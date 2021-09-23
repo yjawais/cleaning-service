@@ -1,9 +1,9 @@
 <?php
 
-namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\ServiceAddon;
+use Illuminate\Database\Eloquent\Model;
 
 class ServiceAddonTableSeeder extends Seeder
 {

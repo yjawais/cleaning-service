@@ -18,7 +18,7 @@ class CreateEmailUsersTable extends Migration
             $table->text('cus_ids')->nullable()->comment('stores customer ids');
             $table->string('cus_sub')->nullable()->comment('stores customer subject');
             $table->text('cus_msg')->nullable()->comment('stores customer message');
-            $table->text('cus_img')->default("https://cdn2.iconfinder.com/data/icons/e-commerce-line-4-1/1024/open_box4-512.png")->comment('stores customer image');
+            $table->string('cus_img')->default("https://cdn2.iconfinder.com/data/icons/e-commerce-line-4-1/1024/open_box4-512.png")->comment('stores customer image');
             $table->timestamp('cus_dt')->useCurrent()->comment('stores customer date');
             $table->timestamp('created_at')->useCurrent()->comment('stores created at');
             $table->timestamp('updated_at')->useCurrent()->comment('stores updated at');
