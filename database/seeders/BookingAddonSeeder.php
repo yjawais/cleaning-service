@@ -45,7 +45,7 @@ class BookingAddonSeeder extends Seeder
         $addon4= new BookingAddon;
         $addon4->id="13";
         $addon4->order_id="1002";
-        $addon4->service_id="8";
+        $addon4->service_id="11";
         $addon4->addons_service_id="17";
         $addon4->addons_service_qty="5";
         $addon4->addons_service_rate="25";
@@ -72,7 +72,7 @@ class BookingAddonSeeder extends Seeder
         $addon7= new BookingAddon;
         $addon7->id="16";
         $addon7->order_id="1005";
-        $addon7->service_id="8";
+        $addon7->service_id="12";
         $addon7->addons_service_id="16";
         $addon7->addons_service_qty="5";
         $addon7->addons_service_rate="24";
@@ -81,7 +81,7 @@ class BookingAddonSeeder extends Seeder
         $addon8= new BookingAddon;
         $addon8->id="17";
         $addon8->order_id="1006";
-        $addon8->service_id="7";
+        $addon8->service_id="12";
         $addon8->addons_service_id="15";
         $addon8->addons_service_qty="3";
         $addon8->addons_service_rate="25";
@@ -99,7 +99,7 @@ class BookingAddonSeeder extends Seeder
         $addon10= new BookingAddon;
         $addon10->id="19";
         $addon10->order_id="1008";
-        $addon10->service_id="8";
+        $addon10->service_id="11";
         $addon10->addons_service_id="15";
         $addon10->addons_service_qty="5";
         $addon10->addons_service_rate="25";

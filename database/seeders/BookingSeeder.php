@@ -42,7 +42,7 @@ class BookingSeeder extends Seeder
         $booking2->client_id="4";
         $booking2->order_date="2021-06-14";
         $booking2->booking_date_time="2021-06-16 14:00:00";
-        $booking2->service_id="10";
+        $booking2->service_id="11";
         $booking2->method_id="15";
         $booking2->method_unit_id="28";
         $booking2->method_unit_qty="2";
@@ -63,7 +63,7 @@ class BookingSeeder extends Seeder
         $booking3->client_id="5";
         $booking3->order_date="2021-06-15";
         $booking3->booking_date_time="2021-06-16 15:00:00";
-        $booking3->service_id="5";
+        $booking3->service_id="9";
         $booking3->method_id="15";
         $booking3->method_unit_id="23";
         $booking3->method_unit_qty="3";
@@ -84,7 +84,7 @@ class BookingSeeder extends Seeder
         $booking4->client_id="6";
         $booking4->order_date="2021-06-16";
         $booking4->booking_date_time="2021-06-17 12:00:00";
-        $booking4->service_id="19";
+        $booking4->service_id="12";
         $booking4->method_id="15";
         $booking4->method_unit_id="27";
         $booking4->method_unit_qty="3";
@@ -126,7 +126,7 @@ class BookingSeeder extends Seeder
         $booking6->client_id="8";
         $booking6->order_date="2021-06-15";
         $booking6->booking_date_time="2021-06-18 13:00:00";
-        $booking6->service_id="18";
+        $booking6->service_id="12";
         $booking6->method_id="18";
         $booking6->method_unit_id="28";
         $booking6->method_unit_qty="2";
@@ -147,7 +147,7 @@ class BookingSeeder extends Seeder
         $booking7->client_id="9";
         $booking7->order_date="2021-06-18";
         $booking7->booking_date_time="2021-06-19 17:00:00";
-        $booking7->service_id="14";
+        $booking7->service_id="9";
         $booking7->method_id="13";
         $booking7->method_unit_id="25";
         $booking7->method_unit_qty="3";
@@ -168,7 +168,7 @@ class BookingSeeder extends Seeder
         $booking8->client_id="10";
         $booking8->order_date="2021-06-18";
         $booking8->booking_date_time="2021-06-19 13:00:00";
-        $booking8->service_id="15";
+        $booking8->service_id="11";
         $booking8->method_id="16";
         $booking8->method_unit_id="28";
         $booking8->method_unit_qty="4";
@@ -210,7 +210,7 @@ class BookingSeeder extends Seeder
         $booking10->client_id="12";
         $booking10->order_date="2021-06-19";
         $booking10->booking_date_time="2021-06-20 13:00:00";
-        $booking10->service_id="10";
+        $booking10->service_id="12";
         $booking10->method_id="16";
         $booking10->method_unit_id="24";
         $booking10->method_unit_qty="2";

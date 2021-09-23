@@ -19,8 +19,8 @@ class DatabaseSeeder extends Seeder
         $this->call(PaymentTransactionSeeder::class); 
         $this->call(ServiceTableSeeder::class);
       //  $this->call(ServiceAddonTableSeeder::class);
-      //  $this->call(BookingSeeder::class);
-       // $this->call(BookingAddonSeeder::class);
+        $this->call(BookingSeeder::class);
+        $this->call(BookingAddonSeeder::class);
       
            
        
