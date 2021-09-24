@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Setting;
-
+use Illuminate\Database\Eloquent\Model;
 
 class SettingTableSeeder extends Seeder
 {

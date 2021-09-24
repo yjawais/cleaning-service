@@ -15,15 +15,19 @@ class DatabaseSeeder extends Seeder
         $this->call(UserTableSeeder::class);
         $this->call(UserDetailSeeder::class);
         $this->call(LangCodeTableSeeder::class);
-        $this->call(ServiceTableSeeder::class);
+        $this->call(ServiceTableSeeder::class);      
         $this->call(ServiceAddonTableSeeder::class);
+        $this->call(OffdaySeeder::class);
         $this->call(SettingTableSeeder::class);
        $this->call(FrequentlyDiscountSeeder::class);
-        $this->call(PaymentSeeder::class);
+       $this->call(PaymentTransactionSeeder::class); 
         $this->call(WeekDayAvailableSeeder::class);
         $this->call(ServicesMethodSeeder::class);
         $this->call(ServiceMethodsUnitsSeeder::class);
         $this->call(ServiceMethodsDesignSeeder::class);
+        $this->call(BookingSeeder::class);
+        $this->call(BookingAddonSeeder::class);
 
         }
+     
 }

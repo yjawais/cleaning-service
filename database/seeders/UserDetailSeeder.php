@@ -15,11 +15,18 @@ class UserDetailSeeder extends Seeder
     {
         $user1 = new UserDetail;
         $user1->user_id = "1";
+<<<<<<< HEAD
         $user1->date_of_birth= "1-1-2000";
         $user1->gender = "male";
         $user1->folder_name = "user1";
         $user1->referral_code = "Ram123";
         $user1->wallet_amount = "0";
+=======
+        //$user1->zip = "111111";
+        $user1->referral_code = "Ram123";
+        $user1->wallet_amount = "0";
+       // $user1->slug = "Ram-Davis";
+>>>>>>> effd94550bc239a7281420893827928471c6860b
         $user1->created_at = "2021-01-01 10:10:11";
         $user1->updated_at = "2021-01-02 11:12:11";
         $user1->deleted_at = "2021-01-03 11:13:11";     
@@ -29,11 +36,18 @@ class UserDetailSeeder extends Seeder
 
         $user2 = new UserDetail;
         $user2->user_id = "2";
+<<<<<<< HEAD
         $user2->date_of_birth= "2-2-2000";
         $user2->gender = "female";
         $user2->folder_name = "user2";
         $user2->referral_code = "shy123";
         $user2->wallet_amount = "0";
+=======
+       // $user2->zip = "222222";
+        $user2->referral_code = "shy123";
+        $user2->wallet_amount = "0";
+      //  $user1->slug = "Shyam-Jones";
+>>>>>>> effd94550bc239a7281420893827928471c6860b
         $user2->created_at = "2021-02-01 10:10:21";
         $user2->updated_at = "2021-02-02 11:12:21";
         $user2->deleted_at = "2021-02-03 11:13:21";     
@@ -43,11 +57,18 @@ class UserDetailSeeder extends Seeder
     
         $user3 = new UserDetail;
         $user3->user_id = "3";
+<<<<<<< HEAD
         $user3->date_of_birth= "3-3-2000";
         $user3->gender = "male";
         $user3->folder_name = "user3";
         $user3->referral_code = "Sit123";
         $user3->wallet_amount = "0";
+=======
+        //$user3->zip = "333333";
+        $user3->referral_code = "Sit123";
+        $user3->wallet_amount = "0";
+       // $user1->slug = "Sita-Smith";
+>>>>>>> effd94550bc239a7281420893827928471c6860b
         $user3->created_at = "2021-01-01 10:10:31";
         $user3->updated_at = "2021-01-02 11:12:31";
         $user3->deleted_at = "2021-01-03 11:13:31";     
@@ -57,11 +78,18 @@ class UserDetailSeeder extends Seeder
 
         $user4 = new UserDetail;
         $user4->user_id = "4";
+<<<<<<< HEAD
         $user4->date_of_birth= "4-4-2000";
         $user4->gender = "female";
         $user4->folder_name = "user4";
         $user4->referral_code = "git123";
         $user4->wallet_amount = "09";
+=======
+        //$user4->zip = "4444449";
+        $user4->referral_code = "git123";
+        $user4->wallet_amount = "09";
+      //  $user1->slug = "Gita-Grange";
+>>>>>>> effd94550bc239a7281420893827928471c6860b
         $user4->created_at = "2021-01-01 10:10:41";
         $user4->updated_at = "2021-01-02 11:12:41";
         $user4->deleted_at = "2021-01-03 11:13:41";     
@@ -71,11 +99,18 @@ class UserDetailSeeder extends Seeder
 
         $user5 = new UserDetail;
         $user5->user_id = "5";
+<<<<<<< HEAD
         $user5->date_of_birth= "5-5-2000";
         $user5->gender = "female";
         $user5->folder_name = "user5";
         $user5->referral_code = "Tho123";
         $user5->wallet_amount = "0";
+=======
+       // $user5->zip = "555555";
+        $user5->referral_code = "Tho123";
+        $user5->wallet_amount = "0";
+      //  $user1->slug = "Thomas-Hubert";
+>>>>>>> effd94550bc239a7281420893827928471c6860b
         $user5->created_at = "2021-01-01 10:10:51";
         $user5->updated_at = "2021-01-02 11:12:51";
         $user5->deleted_at = "2021-01-03 11:13:51";     
@@ -85,11 +120,18 @@ class UserDetailSeeder extends Seeder
 
         $user6 = new UserDetail;
         $user6->user_id = "6";
+<<<<<<< HEAD
         $user6->date_of_birth= "6-6-2000";
         $user6->gender = "male";
         $user6->folder_name = "user6";
         $user6->referral_code = "Aal123";
         $user6->wallet_amount = "0";
+=======
+      //  $user6->zip = "666666";
+        $user6->referral_code = "Aal123";
+        $user6->wallet_amount = "0";
+        //$user1->slug = "Alvaro-Trevino";
+>>>>>>> effd94550bc239a7281420893827928471c6860b
         $user6->created_at = "2021-01-06 10:10:11";
         $user6->updated_at = "2021-01-02 11:12:11";
         $user6->deleted_at = "2021-01-03 11:13:11";     
@@ -99,11 +141,18 @@ class UserDetailSeeder extends Seeder
 
         $user7 = new UserDetail;
         $user7->user_id ="7";
+<<<<<<< HEAD
         $user7->date_of_birth= "7-7-2000";
         $user7->gender = "male";
         $user7->folder_name = "user7";
         $user7->referral_code = "oli123";
         $user7->wallet_amount = "0";
+=======
+      //  $user7->zip = "777777";
+        $user7->referral_code = "oli123";
+        $user7->wallet_amount = "0";
+      //  $user1->slug = "Olive-Stuart";
+>>>>>>> effd94550bc239a7281420893827928471c6860b
         $user7->created_at = "2021-07-01 10:10:11";
         $user7->updated_at = "2021-07-02 11:12:11";
         $user7->deleted_at = "2021-07-03 11:13:11";     
@@ -113,11 +162,18 @@ class UserDetailSeeder extends Seeder
 
         $user8 = new UserDetail;
         $user8->user_id = "8";
+<<<<<<< HEAD
         $user8->date_of_birth= "8-8-2000";
         $user8->gender = "female";
         $user8->folder_name = "user8";
         $user8->referral_code = "Peg123";
         $user8->wallet_amount = "0";
+=======
+       // $user8->zip = "888888";
+        $user8->referral_code = "Peg123";
+        $user8->wallet_amount = "0";
+      //  $user1->slug = "Peg-Hamilton";
+>>>>>>> effd94550bc239a7281420893827928471c6860b
         $user8->created_at = "2021-08-01 10:10:11";
         $user8->updated_at = "2021-08-02 11:12:11";
         $user8->deleted_at = "2021-08-03 11:13:11";     
@@ -127,11 +183,18 @@ class UserDetailSeeder extends Seeder
 
         $user9 = new UserDetail;
         $user9->user_id = "9";
+<<<<<<< HEAD
         $user9->date_of_birth= "9-9-2000";
         $user9->gender = "male";
         $user9->folder_name = "user9";
         $user9->referral_code = "jas123";
         $user9->wallet_amount = "0";
+=======
+       // $user9->zip = "999999";
+        $user9->referral_code = "jas123";
+        $user9->wallet_amount = "0";
+       // $user1->slug = "Jaspin-Lege";
+>>>>>>> effd94550bc239a7281420893827928471c6860b
         $user9->created_at = "2021-09-01 10:10:11";
         $user9->updated_at = "2021-09-02 11:12:11";
         $user9->deleted_at = "2021-09-03 11:13:11";     
@@ -141,11 +204,18 @@ class UserDetailSeeder extends Seeder
 
         $user10 = new UserDetail;
         $user10->user_id ="10";
+<<<<<<< HEAD
         $user10->date_of_birth= "10-10-2000";
         $user10->gender = "female";
         $user10->folder_name = "user10";
         $user10->referral_code = "Luc123";
         $user10->wallet_amount = "0";
+=======
+       // $user10->zip = "100000";
+        $user10->referral_code = "Luc123";
+        $user10->wallet_amount = "0";
+        //$user1->slug = "Lucinda-Roach";
+>>>>>>> effd94550bc239a7281420893827928471c6860b
         $user10->created_at = "2021-10-01 10:10:11";
         $user10->updated_at = "2021-10-02 11:12:11";
         $user10->deleted_at = "2021-10-03 11:13:11";     

@@ -7,7 +7,7 @@
       <div class="container">
         <div class="col-md-5 ml-auto mr-auto">
           <div class="card card-login card-plain">
-          <form method="POST" action="{{ route('login') }}">
+          <form method="POST" action="{{ route('login') }}" name="login">
                         @csrf
               <div class="card-header text-center">
                 <div class="logo-container">
@@ -71,10 +71,38 @@
                 </h6>
               </div>
             </form>
+            <div class="card-footer text-center">
+              <button type="submit" class="btn btn-primary btn-round btn-md " onclick="filladmin()">
+                                    {{ __('Admin') }}
+                                </button>
+              <button type="submit" class="btn btn-primary btn-round btn-md " onclick="fillstaff()">
+                                    {{ __('Staff') }}
+                                </button>
+              <button type="submit" class="btn btn-primary btn-round btn-md " onclick="filluser()">
+                                    {{ __('User') }}
+                                </button>
+              </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
+  <script type="text/javascript">
+                    function filladmin(){
+                    
+                      document.getElementById('email').value = "admin@kaliba.in"
+                      document.getElementById('password').value = "123456789"
+                    }
+                    function fillstaff(){
+                    
+                    document.getElementById('email').value = "staff@kaliba.in"
+                    document.getElementById('password').value = "123456789"
+                  }
+                  function filluser(){
+                    
+                    document.getElementById('email').value = "user@kaliba.in"
+                    document.getElementById('password').value = "123456789"
+                  }
+                 </script>
 @endsection
