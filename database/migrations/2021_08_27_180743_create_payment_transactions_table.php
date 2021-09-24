@@ -39,7 +39,7 @@ class CreatePaymentTransactionsTable extends Migration
             $table->text('error_source')->nullable(); 
             $table->text('error_step')->nullable(); 
             $table->text('error_reason')->nullable(); 
-            $table->timestamp('last_modify')->comment='last modified at';
+            $table->timestamp('last_modify')->useCurrent()->comment='last modified at';
             $table->enum('recurrence_status',array('Y','N'))->comment='recurrence status';
             $table->unsignedBigInteger('user_id')->unsigned()->nullable()->comment = 'foreign key of user';
             $table->foreign('user_id')->references('id')->on('users');
