@@ -1,10 +1,8 @@
 <?php
 
 namespace Database\Seeders;
-
-use App\Models\ServicesMethod;
 use Illuminate\Database\Seeder;
-
+use App\Models\ServicesMethod;
 class ServicesMethodSeeder extends Seeder
 {
     /**

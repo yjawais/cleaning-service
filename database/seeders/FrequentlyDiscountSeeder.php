@@ -6,7 +6,7 @@ use App\Models\FrequentlyDiscount;
 use Illuminate\Database\Seeder;
 
 class FrequentlyDiscountSeeder extends Seeder
-{
+{ 
     /**
      * Run the database seeds.
      *
