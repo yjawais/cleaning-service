@@ -1,9 +1,7 @@
 <?php
-
 namespace Database\Seeders;
-
-use Illuminate\Database\Seeder;
 use App\Models\Service;
+use Illuminate\Database\Seeder;
 
 class ServiceTableSeeder extends Seeder
 {

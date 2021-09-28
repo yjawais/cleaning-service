@@ -15,9 +15,8 @@ class CreateServicesMethodsUnitsRatesTable extends Migration
     {
         Schema::create('services_methods_units_rates', function (Blueprint $table) {
             $table->bigIncrements('id');
-            // $table->unsignedBigInteger('units_id')->unsigned()->nullable()->comment = 'forign key of serviceid';
-            // $table->foreign('units_id')->references('id')->on('service_methods_units');
-            $table->integer('units_id')->nullable()->comment='Stores Units ID';
+            $table->unsignedBigInteger('units_id')->unsigned()->nullable()->comment = 'forign key of serviceid';
+            $table->foreign('units_id')->references('id')->on('service_methods_units');
             $table->string('units')->nullable()->comment='Stores Unit';
             $table->enum('rules', ['G', 'E'])->comment='Stores Rules';
             $table->float('rate')->comment='Stores Rate';

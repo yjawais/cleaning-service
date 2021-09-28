@@ -17,10 +17,9 @@ class CreateServiceMethodsUnitsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('service_id')->unsigned()->nullable()->comment = 'forign key of serviceid';
             $table->foreign('service_id')->references('id')->on('services');
-            // $table->unsignedBigInteger('methods_id')->unsigned()->nullable();
-            // $table->foreign('methods_id')->references('id')->on('services_methods');
-            $table->integer('methods_id')->nullable()->comment='Stores Methods ID';
-            $table->string('units_title')->nullable()->comment='Stores Units Title';
+            $table->unsignedBigInteger('methods_id')->unsigned()->nullable();
+           $table->foreign('methods_id')->references('id')->on('services_methods');
+           $table->string('units_title')->nullable()->comment='Stores Units Title';
             $table->double('base_price')->nullable()->comment='Stores Base Price';
             $table->integer('min_limit')->nullable()->comment='Stores Minimum Limit';
             $table->integer('max_limit')->nullable()->comment='Stores Maximum Limit';
