@@ -15,8 +15,6 @@ class CreateServicesTable extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id')->nullable()->comment('foregin key');
-            $table->foreign('user_id')->references('id')->on('users');
             $table->string('title')->nullable()->comment='Stores Title';
             $table->string('description')->nullable()->comment='Stores Description';
             $table->string('color')->nullable()->comment='Stores Color';
@@ -26,7 +24,7 @@ class CreateServicesTable extends Migration
             $table->string('created_by')->nullable()->comment='Stores username who created';
             $table->string('updated_by')->nullable()->comment='Stores username who updated';
             $table->boolean('is_activate')->default(false);
-            $table->softDeletes()->comment='Add Deleted at timestamp';
+            $table->softDeletes()->nullable()->comment='Add Deleted at timestamp';
             $table->timestamp('created_at')->nullable()->comment='Stores created at time';
             $table->timestamp('updated_at')->nullable()->comment='Stores updated at time';
         });

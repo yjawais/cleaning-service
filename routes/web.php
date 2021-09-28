@@ -109,6 +109,15 @@ Route::get('/slider/view/{slug}', 'WebControllers\BackendControllers\Features\Sl
 // // Route For  Social setting End 
 
 
+// Route For Services
+Route::get('/services', 'WebControllers\BackendControllers\Features\ServiceBackendController@index')->name('service.index')->middleware('auth');
+Route::get('/service/create', 'WebControllers\BackendControllers\Features\ServiceBackendController@create')->name('service.create')->middleware('auth');
+Route::post('/services', 'WebControllers\BackendControllers\Features\ServiceBackendController@store')->name('service.store')->middleware('auth');
+Route::get('/service/view/{slug}', 'WebControllers\BackendControllers\Features\ServiceBackendController@show')->name('service.show')->middleware('auth');
+Route::get('/service/edit/{slug}', 'WebControllers\BackendControllers\Features\ServiceBackendController@edit')->name('service.edit')->middleware('auth');
+Route::post('/service/update/{id}', 'WebControllers\BackendControllers\Features\ServiceBackendController@update')->name('service.update')->middleware('auth');
+Route::get('/service/{id}', 'WebControllers\BackendControllers\Features\ServiceBackendController@destroy')->name('service.destroy')->middleware('auth');
+
 // Sandbox Route
 
 
@@ -152,4 +161,6 @@ Route::get('/slider/view/{slug}', 'WebControllers\BackendControllers\Features\Sl
       Route::post('/sendemail/send', 'Sandbox\EmailController@send');
 
 // });
+
+
 
