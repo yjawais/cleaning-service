@@ -27,6 +27,7 @@ class ServiceAddonTableSeeder extends Seeder
         $addon1->predefine_image_title="";
         $addon1->addon_description="";
         $addon1->duration=30;
+        $addon1->slug="fridge-cleaning";
         $addon1->save();
 
         $addon2 = new ServiceAddon;
@@ -42,6 +43,7 @@ class ServiceAddonTableSeeder extends Seeder
         $addon2->predefine_image_title="";
         $addon2->addon_description="";
         $addon2->duration=30;
+        $addon2->slug="oven-cleaning";
         $addon2->save();
 
         $addon3 = new ServiceAddon;
@@ -57,6 +59,7 @@ class ServiceAddonTableSeeder extends Seeder
         $addon3->predefine_image_title="";
         $addon3->addon_description="";
         $addon3->duration=30;
+        $addon3->slug="inside-window-cleaning";
         $addon3->save();
 
         $addon4 = new ServiceAddon;
@@ -72,6 +75,7 @@ class ServiceAddonTableSeeder extends Seeder
         $addon4->predefine_image_title="";
         $addon4->addon_description="";
         $addon4->duration=30;
+        $addon4->slug="damaged-flooring";
         $addon4->save();
 
         $addon5 = new ServiceAddon;
@@ -87,6 +91,7 @@ class ServiceAddonTableSeeder extends Seeder
         $addon5->predefine_image_title="";
         $addon5->addon_description="";
         $addon5->duration=60;
+        $addon5->slug="door-jams";
         $addon5->save();
 
         $addon6 = new ServiceAddon;
@@ -102,6 +107,7 @@ class ServiceAddonTableSeeder extends Seeder
         $addon6->predefine_image_title="";
         $addon6->addon_description="";
         $addon6->duration=30;
+        $addon6->slug="parking-cleaning";
         $addon6->save();
 
         $addon7 = new ServiceAddon;
@@ -117,6 +123,7 @@ class ServiceAddonTableSeeder extends Seeder
         $addon7->predefine_image_title="";
         $addon7->addon_description="";
         $addon7->duration=30;
+        $addon7->slug="storeroom-cleaning";
         $addon7->save();
     }
 }
