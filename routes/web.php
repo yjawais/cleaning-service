@@ -153,3 +153,17 @@ Route::get('/slider/view/{slug}', 'WebControllers\BackendControllers\Features\Sl
 
 // });
 
+
+//route for schedule break start
+Route::get('/get_schedule-break', 'WebControllers\BackendControllers\Schedule\ScheduleBreakBackendController@index')->name('schedulebreak.index')->middleware('auth');
+Route::post('/add_schedule-break', 'WebControllers\BackendControllers\Schedule\ScheduleBreakBackendController@store')->name('store.schedulebreak')->middleware('auth');
+Route::post('/schedule-break/update/{id}', 'WebControllers\BackendControllers\Schedule\ScheduleBreakBackendController@update')->name('update.schedulebreak')->middleware('auth');
+Route::get('/schedule-break/{id}', 'WebControllers\BackendControllers\Schedule\ScheduleBreakBackendController@destroy')->name('destroy.schedulebreak')->middleware('auth');
+// Route For schedule break End 
+
+//route for schedule offtime start
+Route::get('/get_schedule-offtime', 'WebControllers\BackendControllers\Schedule\ScheduleOfftimeBackendController@index')->name('scheduleofftime.index')->middleware('auth');
+Route::post('/add_schedule-offtime', 'WebControllers\BackendControllers\Schedule\ScheduleOfftimeBackendController@store')->name('store.scheduleofftime')->middleware('auth');
+Route::post('/schedule-offtime/update/{id}', 'WebControllers\BackendControllers\Schedule\ScheduleOfftimeBackendController@update')->name('update.scheduleofftime')->middleware('auth');
+Route::get('/schedule-offtime/{id}', 'WebControllers\BackendControllers\Schedule\ScheduleOfftimeBackendController@destroy')->name('destroy.scheduleofftime')->middleware('auth');
+// Route For schedule offtime End 
