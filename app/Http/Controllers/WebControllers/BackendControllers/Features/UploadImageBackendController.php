@@ -69,9 +69,12 @@ $i++;
        * @author Utkarsh Junghare
        * @return String-filepath
        */
-      public function storeImage($file,$folderName,$resize) {
+      public function storeImage($file,$folderName,$hight,$width) {
         // Get file from request
         //$file = $request->file('image');
+        $resize = Image::make($file)->resize($hight, $width, function ($constraint) {
+          $constraint->aspectRatio();
+          })->encode('jpg');
   
         // Get filename with extension
         $filenameWithExt = $file->getClientOriginalName();
