@@ -45,6 +45,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'WebControllers\FrontendControllers\LandingFrontendController@index');
 
 
+// Route For Staff Start
+Route::get('/staff', 'WebControllers\BackendControllers\StaffBackendController@index')->name('superadmin.staff')->middleware('auth');
+Route::get('/staff/create', 'WebControllers\BackendControllers\StaffBackendController@create')->name('superadmin.staff.create')->middleware('auth');
+Route::post('/staff', 'WebControllers\BackendControllers\StaffBackendController@store')->name('superadmin.staff.store')->middleware('auth');
+Route::get('/staff/view/{id}', 'WebControllers\BackendControllers\StaffBackendController@show')->name('superadmin.staff.show')->middleware('auth');
+Route::get('/staff/edit/{id}', 'WebControllers\BackendControllers\StaffBackendController@edit')->name('superadmin.staff.edit')->middleware('auth');
+Route::post('/staff/update/{id}', 'WebControllers\BackendControllers\StaffBackendController@update')->name('superadmin.staff.update')->middleware('auth');
+Route::get('/staff/{id}', 'WebControllers\BackendControllers\StaffBackendController@destroy')->name('superadmin.staff.destroy')->middleware('auth');
+// Route For staff End 
+
 // Route For Language Code Start
 
 Route::get('/languagecode', 'WebControllers\BackendControllers\Configration\LanguageCodeBackendController@index')->name('superadmin.languagecode')->middleware('auth');

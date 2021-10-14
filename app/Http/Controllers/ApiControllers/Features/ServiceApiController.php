@@ -56,7 +56,7 @@ class ServiceApiController extends ApiController
         }
        
     }
-
+ 
     public function getServiceBySlug($data){
         try{
             $decodedData= json_decode($data,true); 

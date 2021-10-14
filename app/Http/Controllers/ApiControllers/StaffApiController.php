@@ -1,21 +1,24 @@
 <?php
 
-namespace App\Http\Controllers\ApiControllers\Configration;
-
+namespace App\Http\Controllers\ApiControllers;
+use App\Http\Controllers\ApiControllers\Staff\StaffBackendController;
 use App\Http\Controllers\ApiControllers\ApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Role;
 use App\Models\User;
-use App\Models\UserDetail;
+use App\Models\Staff;
+use App\Models\StaffDetail;
 use App\Models\RoleUser; 
-class UserConfigrationApiController extends ApiController
+
+class StaffApiController extends ApiController
 {
+
      /**
        * Prepare For UserConfigration.
        *
        * @param mixed $request
-       * @author Utkarsh Junghare 
+       * @author Anjali Gaikwad
        * Response ={
        *    Success:[
        *    "StatusCode":200,
@@ -28,40 +31,40 @@ class UserConfigrationApiController extends ApiController
        *            }
        *             
        */
-      public function getAllUsers($data){ 
+      public function getAllStaff($data){  
         try{
-            $userDb = User::latest()->get();
-            foreach ($userDb as $user){
-              $user['role'] = RoleUser::select('role_id','is_activate')->where('user_id', $user->id)->first();
-              $user['role_type'] = Role::select('name')->where('id', $user->role['role_id'])->first()['name'];
+            $role_id=Role::select('id')->where('name','staff')->first()['id'];
+            $role_users=RoleUser::select('user_id')->where('role_id',$role_id)->get();
+            
+            foreach ($role_users as $role_user){
+              $role_user['user'] = User::where('id', $role_user->user_id)->first();
                   }
-            return $this->success($userDb,200);
+            return $this->success($role_users,200);
         }catch(Exception $e){
             return $this->failed('Given data is not existis.',202);
         }
        
     }
 
-    public function getUser($data){
+    public function getStaff($data){
         try{
-            $userDb = User::find($data); 
-           // dd($userDb);
-            return $this->success($userDb,200);
+            $role_users = User::find($data); 
+            return $this->success($role_users,200);
         }catch(Exception $e){
             return $this->failed('Given data is not existis.',202);
         }
        
     }
 
-    public function storeUser($data){ 
+    public function storeStaff($data){ 
         try{ 
              $decodedData= json_decode($data,true); 
              $user = new User();
              $user_type = $decodedData['user_type'];
              $user->fname = $decodedData['fname'];
              $user->lname = $decodedData['lname'];
-             $user->email = $decodedData['email'];
-             $user->password = Hash::make($decodedData['password']);
+            $user->email = $decodedData['email'];
+            $user->password = Hash::make($decodedData['password']);
              $user->save(); 
              $user->roles()
              ->attach(Role::where('name', $user_type)->first());  
@@ -72,13 +75,13 @@ class UserConfigrationApiController extends ApiController
        
     }
  
-    public function updateUser($data){ 
+    public function updateStaff($data){ 
        try{
              $decodedData= json_decode($data,true);
             if($decodedData['status'] === 'true'){
                  $is_activate=true;
                }
-               else  
+               else 
                 $is_activate = false;
                 User::query()->where('id', $decodedData['id'])->update([
                 'fname' => $decodedData['fname'],
@@ -98,7 +101,7 @@ class UserConfigrationApiController extends ApiController
        
     } 
 
-    public function deleteUser($data){ 
+    public function deleteStaff($data){ 
         try{
              $decodedData= json_decode($data,true);
              $model =  RoleUser::find($decodedData['id']);
