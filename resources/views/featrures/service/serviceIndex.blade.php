@@ -57,8 +57,8 @@
                     <td style="color:red">Deactivate</td>
                     @endif
                   <td> 
-                   <a href="#"><button type="button" class="btn btn-md btn-default" >Addon</button> </a>
-                    <a href="#"><button type="button" class="btn btn-md btn-default">Pricing</button></a>
+                   <a href="{{route('addon.index')}}"><button type="button" class="btn btn-outline-default" >Addon</button> </a>
+                    <a href="{{route('method.index')}}"><button type="button" class="btn btn-outline-default">Pricing</button></a>
                   </td>
               
                   

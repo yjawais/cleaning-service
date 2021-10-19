@@ -22,18 +22,13 @@ class ServiceMethodsUnitsSeeder extends Seeder
         $user1->base_price = "10";
         $user1->min_limit = "1";
         $user1->max_limit = "10";
-        // $user1->status = "E";
+        $user1->status = "E";
         $user1->position = "0";
         $user1->limit_title = "Select Bedroom(s)";
         $user1->unit_symbol = " ";
         $user1->half_section= "D";
         $user1->uduration = "30";
-        $user1->slug = "Bedroom(s)";
-        $user1->created_at = "2021-01-01 10:10:11";
-        $user1->updated_at = "2021-01-02 11:12:11";
-        $user1->deleted_at = "2021-01-03 11:13:11";     
-        $user1->created_by = "1";
-        $user1->updated_by = "1";
+        $user1->slug = "bedroom(s)";
         $user1->save();
 
         $user2 = new ServiceMethodsUnit;
@@ -44,18 +39,13 @@ class ServiceMethodsUnitsSeeder extends Seeder
         $user2->base_price = "12";
         $user2->min_limit = "1";
         $user2->max_limit = "8";
-    //    $user2->status = "E";
+        $user2->status = "E";
         $user2->position = "0";
         $user2->limit_title = "Select Bedroom(s)";
         $user2->unit_symbol = " ";
         $user2->half_section= "D";
         $user2->uduration = "30";
         $user2->slug = "Bedroom(s)";
-        $user2->created_at = "2021-02-01 10:10:21";
-        $user2->updated_at = "2021-02-02 11:12:21";
-        $user2->deleted_at = "2021-02-03 11:13:21";     
-        $user2->created_by = "1";
-        $user2->updated_by = "2";
         $user2->save();
 
         $user3 = new ServiceMethodsUnit;
@@ -66,18 +56,13 @@ class ServiceMethodsUnitsSeeder extends Seeder
         $user3->base_price = "5";
         $user3->min_limit = "1";
         $user3->max_limit = "2";
-    //    $user3->status = "E";
+        $user3->status = "E";
         $user3->position = "0";
         $user3->limit_title = " ";
         $user3->unit_symbol = " ";
         $user3->half_section= "D";
         $user3->uduration = "30";
-        $user3->slug = "Water-Line-Repairs";
-        $user3->created_at = "2021-01-01 10:10:31";
-        $user3->updated_at = "2021-01-02 11:12:31";
-        $user3->deleted_at = "2021-01-03 11:13:31";     
-        $user3->created_by = "1";
-        $user3->updated_by = "3";
+        $user3->slug = "water-line-repairs";
         $user3->save();
 
         $user4 = new ServiceMethodsUnit;
@@ -88,18 +73,13 @@ class ServiceMethodsUnitsSeeder extends Seeder
         $user4->base_price = "10";
         $user4->min_limit = "1";
         $user4->max_limit = "4";
-    //    $user4->status = "E";
+        $user4->status = "E";
         $user4->position = "0";
         $user4->limit_title = " ";
         $user4->unit_symbol = " ";
         $user4->half_section= "D";
         $user4->uduration = "30";
-        $user4->slug = "Frozen\/Leaking-Pipes";
-        $user4->created_at = "2021-01-01 10:10:41";
-        $user4->updated_at = "2021-01-02 11:12:41";
-        $user4->deleted_at = "2021-01-03 11:13:41";     
-        $user4->created_by = "1";
-        $user4->updated_by = "4";
+        $user4->slug = "frozen\/leaking-pipes";
         $user4->save();
 
         $user5 = new ServiceMethodsUnit;
@@ -110,18 +90,13 @@ class ServiceMethodsUnitsSeeder extends Seeder
         $user5->base_price = "4";
         $user5->min_limit = "1";
         $user5->max_limit = "4";
-   //     $user5->status = "E";
+        $user5->status = "E";
         $user5->position = "0";
         $user5->limit_title = " ";
         $user5->unit_symbol = " ";
         $user5->half_section= "D";
         $user5->uduration = "30";
-        $user5->slug = "Clogged-Drains";
-        $user5->created_at = "2021-01-01 10:10:51";
-        $user5->updated_at = "2021-01-02 11:12:51";
-        $user5->deleted_at = "2021-01-03 11:13:51";     
-        $user5->created_by = "1";
-        $user5->updated_by = "5";
+        $user5->slug = "clogged-drains";
         $user5->save();
 
         $user6 = new ServiceMethodsUnit;
@@ -132,18 +107,13 @@ class ServiceMethodsUnitsSeeder extends Seeder
         $user6->base_price = "10";
         $user6->min_limit = "2";
         $user6->max_limit = "5";
-    //    $user6->status = "E";
+        $user6->status = "E";
         $user6->position = "0";
         $user6->limit_title = " ";
         $user6->unit_symbol = " ";
         $user6->half_section= "D";
         $user6->uduration = "30";
-        $user6->slug = "Water-Heater-Repairs";
-        $user6->created_at = "2021-01-06 10:10:11";
-        $user6->updated_at = "2021-01-02 11:12:11";
-        $user6->deleted_at = "2021-01-03 11:13:11";     
-        $user6->created_by = "1";
-        $user6->updated_by = "6";
+        $user6->slug = "water-heater-repairs";
         $user6->save();
 
         $user7 = new ServiceMethodsUnit;
@@ -154,18 +124,13 @@ class ServiceMethodsUnitsSeeder extends Seeder
         $user7->base_price = "5";
         $user7->min_limit = "1";
         $user7->max_limit = "5";
-     //   $user7->status = "E";
+        $user7->status = "E";
         $user7->position = "0";
         $user7->limit_title = " ";
         $user7->unit_symbol = " ";
         $user7->half_section= "D";
         $user7->uduration = "30";
-        $user7->slug = "Build-walls";
-        $user7->created_at = "2021-07-01 10:10:11";
-        $user7->updated_at = "2021-07-02 11:12:11";
-        $user7->deleted_at = "2021-07-03 11:13:11";     
-        $user7->created_by = "1";
-        $user7->updated_by = "7";
+        $user7->slug = "build-walls";
         $user7->save();
 
         $user8 = new ServiceMethodsUnit;
@@ -176,18 +141,13 @@ class ServiceMethodsUnitsSeeder extends Seeder
         $user8->base_price = "4";
         $user8->min_limit = "1";
         $user8->max_limit = "5";
-    //    $user8->status = "E";
+        $user8->status = "E";
         $user8->position = "0";
         $user8->limit_title = " ";
         $user8->unit_symbol = " ";
         $user8->half_section= "D";
         $user8->uduration = "30";
-        $user8->slug = "Build-doorways";
-        $user8->created_at = "2021-08-01 10:10:11";
-        $user8->updated_at = "2021-08-02 11:12:11";
-        $user8->deleted_at = "2021-08-03 11:13:11";     
-        $user8->created_by = "1";
-        $user8->updated_by = "8";
+        $user8->slug = "build-doorways";
         $user8->save();
 
         $user9 = new ServiceMethodsUnit;
@@ -198,18 +158,13 @@ class ServiceMethodsUnitsSeeder extends Seeder
         $user9->base_price = "3";
         $user9->min_limit = "2";
         $user9->max_limit = "5";
-    //    $user9->status = "E";
+        $user9->status = "E";
         $user9->position = "0";
         $user9->limit_title = " ";
         $user9->unit_symbol = " ";
         $user9->half_section= "D";
         $user9->uduration = "30";
-        $user9->slug = "Build-windows";
-        $user9->created_at = "2021-09-01 10:10:11";
-        $user9->updated_at = "2021-09-02 11:12:11";
-        $user9->deleted_at = "2021-09-03 11:13:11";     
-        $user9->created_by = "1";
-        $user9->updated_by = "9";
+        $user9->slug = "build-windows";
         $user9->save();
 
         $user10 = new ServiceMethodsUnit;
@@ -220,18 +175,13 @@ class ServiceMethodsUnitsSeeder extends Seeder
         $user10->base_price = "2";
         $user10->min_limit = "100";
         $user10->max_limit = "1000";
-    //    $user10->status = "E";
+        $user10->status = "E";
         $user10->position = "0";
         $user10->limit_title = "Enter Area of Cleaning";
         $user10->unit_symbol = "sq. ft.";
         $user10->half_section= "D";
         $user10->uduration = "30";
-        $user10->slug = "Remodeling-or-enhancing-existing-structures-";
-        $user10->created_at = "2021-10-01 10:10:11";
-        $user10->updated_at = "2021-10-02 11:12:11";
-        $user10->deleted_at = "2021-10-03 11:13:11";     
-        $user10->created_by = "1";
-        $user10->updated_by = "10";
+        $user10->slug = "remodeling-or-enhancing-existing-structures-";
         $user10->save();
 
         $user11 = new ServiceMethodsUnit;
@@ -242,18 +192,13 @@ class ServiceMethodsUnitsSeeder extends Seeder
         $user11->base_price = "5";
         $user11->min_limit = "1";
         $user11->max_limit = "5";
-    //    $user11->status = "E";
+        $user11->status = "E";
         $user11->position = "0";
         $user11->limit_title = " ";
         $user11->unit_symbol = " ";
         $user11->half_section= "D";
         $user11->uduration = "30";
-        $user11->slug = "Swiping-With-Desk-Cleaning";
-        $user11->created_at = "2021-01-01 10:10:11";
-        $user11->updated_at = "2021-08-02 11:12:11";
-        $user11->deleted_at = "2021-01-03 11:13:11";     
-        $user11->created_by = "1";
-        $user11->updated_by = "11";
+        $user11->slug = "swiping-with-desk-cleaning";
         $user11->save();
 
         $user12 = new ServiceMethodsUnit;
@@ -264,18 +209,13 @@ class ServiceMethodsUnitsSeeder extends Seeder
         $user12->base_price = "4";
         $user12->min_limit = "1";
         $user12->max_limit = "5";
-    //   $user12->status = "E";
+        $user12->status = "E";
         $user12->position = "0";
         $user12->limit_title = " ";
         $user12->unit_symbol = " ";
         $user12->half_section= "D";
         $user12->uduration = "30";
-        $user12->slug = "Doors-And-Window-Cleaning";
-        $user12->created_at = "2021-01-01 10:10:11";
-        $user12->updated_at = "2021-07-02 11:12:11";
-        $user12->deleted_at = "2021-01-03 11:13:11";     
-        $user12->created_by = "1";
-        $user12->updated_by = "12";
+        $user12->slug = "doors-and-window-cleaning";
         $user12->save();
 
         $user13 = new ServiceMethodsUnit;
@@ -286,18 +226,13 @@ class ServiceMethodsUnitsSeeder extends Seeder
         $user13->base_price = "2";
         $user13->min_limit = "200";
         $user13->max_limit = "1000";
-        // $user13->status = "E";
+        $user13->status = "E";
         $user13->position = "0";
         $user13->limit_title = "Enter Area of Cleaning";
         $user13->unit_symbol = "sq. ft.";
         $user13->half_section= "D";
         $user13->uduration = "30";
-        $user13->slug = "Floor-Cleaning";
-        $user13->created_at = "2021-01-01 10:10:11";
-        $user13->updated_at = "2021-06-02 11:12:11";
-        $user13->deleted_at = "2021-01-03 11:13:11";     
-        $user13->created_by = "1";
-        $user13->updated_by = "13";
+        $user13->slug = "floor-cleaning";
         $user13->save();
     }
 }

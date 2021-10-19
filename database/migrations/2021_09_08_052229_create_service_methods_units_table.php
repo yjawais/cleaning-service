@@ -24,7 +24,7 @@ class CreateServiceMethodsUnitsTable extends Migration
             $table->integer('min_limit')->nullable()->comment='Stores Minimum Limit';
             $table->integer('max_limit')->nullable()->comment='Stores Maximum Limit';
             $table->boolean('is_activate')->default(false);
-            // $table->enum('status', ['E', 'D'])->comment='Stores Status';
+            $table->enum('status', ['E', 'D'])->comment='Stores Status';
             $table->integer('position')->nullable()->comment='Stores Position';
             $table->string('limit_title')->nullable()->comment='Stores Limit Title';
             $table->string('unit_symbol')->nullable()->comment='Stores Unit Symbol';

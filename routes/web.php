@@ -117,6 +117,27 @@ Route::get('/service/view/{slug}', 'WebControllers\BackendControllers\Features\S
 Route::get('/service/edit/{slug}', 'WebControllers\BackendControllers\Features\ServiceBackendController@edit')->name('service.edit')->middleware('auth');
 Route::post('/service/update/{id}', 'WebControllers\BackendControllers\Features\ServiceBackendController@update')->name('service.update')->middleware('auth');
 Route::get('/service/{id}', 'WebControllers\BackendControllers\Features\ServiceBackendController@destroy')->name('service.destroy')->middleware('auth');
+//Route For Service End
+
+//Route for Service Addon
+Route::get('/addon', 'WebControllers\BackendControllers\Features\ServiceBackendController@addonindex')->name('addon.index')->middleware('auth');
+Route::get('/addon/create', 'WebControllers\BackendControllers\Features\ServiceBackendController@addoncreate')->name('addon.create')->middleware('auth');
+Route::post('/addon', 'WebControllers\BackendControllers\Features\ServiceBackendController@addonstore')->name('addon.store')->middleware('auth');
+Route::get('/addon/view/{slug}', 'WebControllers\BackendControllers\Features\ServiceBackendController@addonshow')->name('addon.show')->middleware('auth');
+Route::get('/addon/edit/{slug}', 'WebControllers\BackendControllers\Features\ServiceBackendController@addonedit')->name('addon.edit')->middleware('auth');
+Route::post('/addon/update/{id}', 'WebControllers\BackendControllers\Features\ServiceBackendController@addonupdate')->name('addon.update')->middleware('auth');
+Route::get('/addon/{id}', 'WebControllers\BackendControllers\Features\ServiceBackendController@addondestroy')->name('addon.destroy')->middleware('auth');
+//Route for Service Addon Ends
+
+//Route for Pricing (Methods)
+Route::get('/method', 'WebControllers\BackendControllers\Features\ServiceBackendController@methodindex')->name('method.index')->middleware('auth');
+Route::get('/method/create', 'WebControllers\BackendControllers\Features\ServiceBackendController@methodcreate')->name('method.create')->middleware('auth');
+Route::post('/method', 'WebControllers\BackendControllers\Features\ServiceBackendController@methodstore')->name('method.store')->middleware('auth');
+//Route for Pricing (Method Units)
+Route::get('/unit', 'WebControllers\BackendControllers\Features\ServiceBackendController@unitindex')->name('unit.index')->middleware('auth');
+Route::get('/unit/create', 'WebControllers\BackendControllers\Features\ServiceBackendController@unitcreate')->name('unit.create')->middleware('auth');
+Route::post('/unit', 'WebControllers\BackendControllers\Features\ServiceBackendController@unitstore')->name('unit.store')->middleware('auth');
+
 
 // Sandbox Route
 
