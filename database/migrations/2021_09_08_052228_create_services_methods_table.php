@@ -17,10 +17,9 @@ class CreateServicesMethodsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('service_id')->unsigned()->nullable()->comment = 'forign key of serviceid';
             $table->foreign('service_id')->references('id')->on('services');
-            $table->string('method_title')->nullable()->comment='Stores Method Title';
+            $table->unsignedBigInteger('method_id')->unsigned()->nullable()->comment = 'forign key of method';
+            $table->foreign('method_id')->references('id')->on('methods');
             $table->boolean('is_activate')->default(false);
-            $table->integer('position')->nullable()->comment='Stores Position';
-            $table->text('slug')->nullable()->comment='Stores Slug';
             $table->string('created_by')->nullable()->comment='Stores username who created';
             $table->string('updated_by')->nullable()->comment='Stores username who updated';
             $table->softDeletes()->comment='Add Deleted at timestamp';
