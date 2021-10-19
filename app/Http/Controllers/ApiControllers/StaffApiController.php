@@ -9,7 +9,8 @@ use App\Models\Role;
 use App\Models\User;
 use App\Models\Staff;
 use App\Models\StaffDetail;
-use App\Models\RoleUser; 
+use App\Models\RoleUser;
+use Exception;
 
 class StaffApiController extends ApiController
 {
@@ -33,22 +34,33 @@ class StaffApiController extends ApiController
        */
       public function getAllStaff($data){  
         try{
-            $role_id=Role::select('id')->where('name','staff')->first()['id'];
-            $role_users=RoleUser::select('user_id')->where('role_id',$role_id)->get();
-            
-            foreach ($role_users as $role_user){
-              $role_user['user'] = User::where('id', $role_user->user_id)->first();
-                  }
-            return $this->success($role_users,200);
+            $userDb = User::get(); 
+          //  dd($userDb);
+            return $this->success($userDb,200);
         }catch(Exception $e){
             return $this->failed('Given data is not existis.',202);
         }
+        // try{
+        //     $role_id=Role::select('id')->where('name','staff')->first()['id'];
+        //     $role_users=RoleUser::select('user_id')->where('role_id',$role_id)->get();
+        //    //dd($role_users);
+        //     foreach ($role_users as $role_user){
+        //       $role_user['user'] = User::where('id', $role_user->user_id)->first();
+        //       //dd($role_user);
+        //           }
+        //     return $this->success($role_users,200);
+        // }catch(Exception $e){
+        //     return $this->failed('Given data is not existis.',202);
+        // }
        
     }
 
     public function getStaff($data){
         try{
-            $role_users = User::find($data); 
+         //   $role_users = User::find($data); 
+            $decodedData= json_decode($data,true); 
+            $role_users = User::where('id',$decodedData['id'])->first(); 
+         //  dd($role_users);
             return $this->success($role_users,200);
         }catch(Exception $e){
             return $this->failed('Given data is not existis.',202);
@@ -64,7 +76,8 @@ class StaffApiController extends ApiController
              $user->fname = $decodedData['fname'];
              $user->lname = $decodedData['lname'];
             $user->email = $decodedData['email'];
-            $user->password = Hash::make($decodedData['password']);
+            $user->mobile_number = $decodedData['mobile_number'];
+         //   $user->password = Hash::make($decodedData['password']);
              $user->save(); 
              $user->roles()
              ->attach(Role::where('name', $user_type)->first());  

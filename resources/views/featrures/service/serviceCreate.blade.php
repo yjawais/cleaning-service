@@ -4,7 +4,7 @@
   @include('include.dashboard.role.admin.sidebar')
 @endsection
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
-
+ 
 @section('content')
 <div class="header bg-secondary pb-6">
       <div class="container-fluid">

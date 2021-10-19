@@ -39,15 +39,18 @@ class StaffBackendController extends BackendController
              $data = json_encode(array('datakey'=>"webapplication"));
              $usersDb = $staff_api_controller->getAllStaff($data);
              $encodedData= json_decode($usersDb->content(),true);               
-             $encodedobject=$encodedData['data'] ;            
+             $encodedobject=$encodedData['data'] ;  
+           //  dd($encodedobject);       
              $role_api_controller = new RoleApiController; 
-             $role = $role_api_controller->getRole($data);
+             $role = $role_api_controller->getAllRole($data);
              $encodedData1= json_decode($role->content(),true);  
              $encodedobject2 = $encodedData1['data'] ;
+                       //   dd($encodedobject2);       
+
               return view('Staff.StaffIndex', [
-                  'staff' =>  $encodedobject,
+                  'staffs' =>  $encodedobject,
                   'sr' => $sr,
-                  'roles' => $encodedobject2,
+                'roles' => $encodedobject2,
                   ]);
    
       }
@@ -70,6 +73,7 @@ class StaffBackendController extends BackendController
        $staff_api_controller = new StaffApiController; 
        $data1 = json_encode($request->all()); 
        $data2 = json_encode(array('datakey'=>"webapplication"));  
+       //dd($data2);
        $data =json_encode(array_merge(json_decode($data1, true),json_decode($data2, true)));
        $staff = $staff_api_controller->storeStaff($data);
        $encodedData= json_decode($staff->content(),true); 
@@ -80,25 +84,40 @@ class StaffBackendController extends BackendController
 
       public function show( $id){
         $staff_api_controller = new StaffApiController; 
-        $data = json_encode(array('datakey'=>"webapplication"));       
+        $data = json_encode(array('datakey'=>"webapplication",'id'=>$id));   
+        //dd($data);    
         $staff = $staff_api_controller->getStaff($data); 
+              //  dd($staff);
         $encodedData= json_decode($staff->content(),true);               
         $encodedobject=$encodedData['data'] ;
-        // dd($encodedobject);
+        //dd($encodedobject);
+        $role_api_controller = new RoleApiController; 
+        $role = $role_api_controller->getAllRole($data);
+        $encodedData1= json_decode($role->content(),true);  
+        $encodedobject2 = $encodedData1['data'] ;
+                  //   dd($encodedobject2); 
         return view('Staff.StaffShow',[
             'staff' => $encodedobject,
-        ]);
+            'roles' => $encodedobject2,
+          ]);
         }
 
       public function edit( $id){
         $staff_api_controller = new StaffApiController; 
-        $data = json_encode(array('datakey'=>"webapplication"));       
+        $data = json_encode(array('datakey'=>"webapplication",'id'=>$id));       
         $staff = $staff_api_controller->getStaff($data); 
+     // dd($staff);
         $encodedData= json_decode($staff->content(),true);               
         $encodedobject=$encodedData['data'] ;
-        // dd($encodedobject);
+       // dd($encodedobject);
+       $role_api_controller = new RoleApiController; 
+       $role = $role_api_controller->getAllRole($data);
+       $encodedData1= json_decode($role->content(),true);  
+       $encodedobject2 = $encodedData1['data'] ;
+                 //   dd($encodedobject2);
         return view('Staff.StaffEdit',[
             'staff' => $encodedobject,
+            'roles' => $encodedobject2,
         ]);
       }
 

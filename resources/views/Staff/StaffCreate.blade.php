@@ -14,9 +14,9 @@
                 <div class="col-lg-6 col-7">
                 </div>
                 <div class="col-lg-6 col-5 text-right">
-                    <button type="button" class="btn btn-md btn-default" href="{{route('superadmin.staff')}}">Back</button>
-                    <!--    <a href="#" class="btn btn-sm btn-neutral">New</a> 
-          <a href="#" class="btn btn-sm btn-neutral">Filters</a> -->
+                    <!-- <button type="button" class="btn btn-md btn-default" href="{{route('superadmin.staff')}}">Back</button> -->
+                        <a class="btn btn-md btn-default " href="{{route('superadmin.staff')}}">Back</a> 
+          <!-- <a href="#" class="btn btn-sm btn-neutral">Filters</a> --> 
                 </div>
             </div>
         </div>
@@ -54,9 +54,9 @@
                     <form role="form" action="{{route('superadmin.staff.store')}}" method="POST">
                         @csrf
                         <div class="form-group row">
-                            <label for="example-text-input" class="col-md-4 col-form-label form-control-label">First Name</label></label>
+                            <label for="example-text-input" class="col-md-4 col-form-label form-control-label">First Name</label>
                             <div class="col-md-8">
-                                <input name="name" class="form-control @error('fname') is-invalid @enderror" type="text" id="fname">
+                                <input name="fname" class="form-control @error('fname') is-invalid @enderror" type="text" id="fname">
                             </div>
                             @error('fname')
                             <span class="invalid-feedback" role="alert">
@@ -65,9 +65,9 @@
                             @enderror
                         </div>
                         <div class="form-group row">
-                            <label for="example-text-input" class="col-md-4 col-form-label form-control-label">Last Name</label></label>
+                            <label for="example-text-input" class="col-md-4 col-form-label form-control-label">Last Name</label>
                             <div class="col-md-8">
-                                <input name="name" class="form-control @error('lname') is-invalid @enderror" type="text" id="lname">
+                                <input name="lname" class="form-control @error('lname') is-invalid @enderror" type="text" id="lname">
                             </div>
                             @error('lname')
                             <span class="invalid-feedback" role="alert">
@@ -104,10 +104,10 @@
                             <label for="example-text-input" class="col-md-4 col-form-label form-control-label">User Type</label>
                             <div class="col-md-8">
                                 <select style="color:black" class="form-control" data-toggle="select" id="user_type" name="user_type">
-                                    <option value="user">Select Role</option>
+                                 {{--   <option value="user">Select Role</option>
                                     @foreach($roles as $role)
                                     <option value="{{$role['name']}}">{{$role['name']}}</option>
-                                    @endforeach
+                                    @endforeach--}}
                                 </select>
                             </div>
                         </div>
