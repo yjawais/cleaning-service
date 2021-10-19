@@ -40,6 +40,7 @@
                     <th>Color</th>
                     <th>Status</th>
                     <th>Action</th>
+                    <th></th>
                   </tr>
                 </thead>
                 
@@ -57,8 +58,8 @@
                     <td style="color:red">Deactivate</td>
                     @endif
                   <td> 
-                   <a href="{{route('addon.index')}}"><button type="button" class="btn btn-outline-default" >Addon</button> </a>
-                    <a href="{{route('method.index')}}"><button type="button" class="btn btn-outline-default">Pricing</button></a>
+                  <a href="{{route('method.index',$service['slug'])}}"><button type="button" class="btn btn-outline-default">Pricing</button></a>
+                  <a href="{{route('addon.index')}}"><button type="button" class="btn btn-outline-default" >Addon</button> </a>
                   </td>
               
                   

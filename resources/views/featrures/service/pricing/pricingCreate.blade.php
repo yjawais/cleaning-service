@@ -4,6 +4,16 @@
   @include('include.dashboard.role.admin.sidebar')
 @endsection
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+<script>
+function check(elem) {
+    // use one of possible conditions
+   if (elem.value == 'Other'){
+        document.getElementById("other-div").style.display = 'block';
+    } else {
+        document.getElementById("other-div").style.display = 'none';
+    }
+}
+</script>
 
 @section('content')
 <div class="header bg-secondary pb-6">
@@ -13,6 +23,7 @@
             <div class="col-lg-6 col-7">
             </div>
             <div class="col-lg-6 col-5 text-right">
+            <!-- <a href="{{route('method.create')}}" class="btn btn-md btn-default">Add Method</a>  -->
              <a href="{{route('method.index')}}" class="btn btn-md btn-default">View</a> 
             </div>
           </div>
@@ -47,11 +58,21 @@
           <!-- Form groups used in grid -->
           <form role="form" action="{{route('method.store')}}" method="POST" enctype="multipart/form-data">
           @csrf
+          <input type="hidden" name = "service_slug" value={{$slug}}>
           <div class="row">
           <div class="col-md-6">
             <div class="form-group">
               <label class="form-control-label" for="example4cols1Input">Method Title</label>
-              <input type="text" class="form-control" placeholder="Enter Method Title" id="method_title" name="method_title">
+              <select id="mySelect" onChange="check(this);" class="form-control" id="method_title_id" name="method_title_id">
+              <option>Choose Your Method Name</option>
+              @foreach($methods as $method)              
+              <option value="{{$method['id']}}">{{$method['method_title']}}</option>
+              @endforeach
+              <option>Other</option>
+              </select>
+            <div id="other-div" style="display:none;">
+              <label class="form-control-label">Enter Method Title <input name="method_title" id="other-input"></input></label>
+            </div>
             </div>
             </div>
             <div class="col-md-6">

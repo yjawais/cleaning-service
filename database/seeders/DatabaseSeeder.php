@@ -22,9 +22,9 @@ class DatabaseSeeder extends Seeder
        $this->call(FrequentlyDiscountSeeder::class);
        $this->call(PaymentTransactionSeeder::class); 
         $this->call(WeekDayAvailableSeeder::class);
-        $this->call(ServicesMethodSeeder::class);
-        $this->call(ServiceMethodsUnitsSeeder::class);
-        $this->call(ServiceMethodsDesignSeeder::class);
+        // $this->call(ServicesMethodSeeder::class);
+        // $this->call(ServiceMethodsUnitsSeeder::class);
+        // $this->call(ServiceMethodsDesignSeeder::class);
         $this->call(BookingSeeder::class);
         $this->call(BookingAddonSeeder::class);
 

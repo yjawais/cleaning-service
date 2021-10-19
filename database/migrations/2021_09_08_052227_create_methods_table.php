@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateServicesMethodsTable extends Migration
+class CreateMethodsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateServicesMethodsTable extends Migration
      */
     public function up()
     {
-        Schema::create('services_methods', function (Blueprint $table) {
+        Schema::create('methods', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('service_id')->unsigned()->nullable()->comment = 'forign key of serviceid';
-            $table->foreign('service_id')->references('id')->on('services');
-            $table->unsignedBigInteger('method_id')->unsigned()->nullable()->comment = 'forign key of method';
-            $table->foreign('method_id')->references('id')->on('methods');
+            $table->string('method_title')->nullable()->comment='Stores Method Title';
             $table->boolean('is_activate')->default(false);
+            $table->integer('position')->nullable()->comment='Stores Position';
+            $table->text('slug')->nullable()->comment='Stores Slug';
             $table->string('created_by')->nullable()->comment='Stores username who created';
             $table->string('updated_by')->nullable()->comment='Stores username who updated';
             $table->softDeletes()->comment='Add Deleted at timestamp';
@@ -35,6 +34,6 @@ class CreateServicesMethodsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('services_methods');
+        Schema::dropIfExists('methods');
     }
 }
