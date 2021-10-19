@@ -130,8 +130,8 @@ Route::get('/addon/{id}', 'WebControllers\BackendControllers\Features\ServiceBac
 //Route for Service Addon Ends
 
 //Route for Pricing (Methods)
-Route::get('/method', 'WebControllers\BackendControllers\Features\ServiceBackendController@methodindex')->name('method.index')->middleware('auth');
-Route::get('/method/create', 'WebControllers\BackendControllers\Features\ServiceBackendController@methodcreate')->name('method.create')->middleware('auth');
+Route::get('/method/{slug}', 'WebControllers\BackendControllers\Features\ServiceBackendController@methodindex')->name('method.index')->middleware('auth');
+Route::get('/method/create/{slug}', 'WebControllers\BackendControllers\Features\ServiceBackendController@methodcreate')->name('method.create')->middleware('auth');
 Route::post('/method', 'WebControllers\BackendControllers\Features\ServiceBackendController@methodstore')->name('method.store')->middleware('auth');
 //Route for Pricing (Method Units)
 Route::get('/unit', 'WebControllers\BackendControllers\Features\ServiceBackendController@unitindex')->name('unit.index')->middleware('auth');

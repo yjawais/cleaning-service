@@ -207,28 +207,38 @@ public function addonstore(Request $request)
 
     //addon crud and view ends
     //pricing(methods) view starts
-    public function methodindex(){
+    public function methodindex($slug){
       $sr = 0; 
       $service_api_controller = new ServiceApiController; 
       $data = json_encode(array('datakey'=>"webapplication"));       
-      $method = $service_api_controller->getAllMethods($data); 
+      $method = $service_api_controller->getServiceMethods($data); 
       $encodedData= json_decode($method->content(),true);               
       $encodedobject=$encodedData['data'] ;
       //dd($encodedobject);
           return view('featrures.service.pricing.pricingIndex',[ 
               'method_details' => $encodedobject,
+              'slug'=> $slug,
               'sr' => $sr,
           ]);        
     }
 
-    public function methodcreate(){
-      return view('featrures.service.pricing.pricingCreate');
+    public function methodcreate($slug){
+      $service_api_controller = new ServiceApiController;
+      $data = json_encode(array('datakey'=>"webapplication"));       
+      $method = $service_api_controller->getAllMethods($data); 
+      $encodedData= json_decode($method->content(),true);               
+      $encodedobject=$encodedData['data'] ;
+
+      return view('featrures.service.pricing.pricingCreate',[ 
+        'methods' => $encodedobject,
+        'slug' => $slug
+    ]);        
       }
 
     public function methodstore(Request $request)
       {
         $validated = $request->validate([
-          'method_title' => 'required|max:255',
+          'method_title' => 'max:255',
           'position'=>'required'
       ]);
           $service_api_controller = new ServiceApiController; 

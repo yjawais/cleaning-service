@@ -13,7 +13,7 @@
             <div class="col-lg-6 col-7">
             </div>
             <div class="col-lg-6 col-5 text-right">
-              <a href="{{route('method.create')}}" class="btn btn-md btn-default">Add Service Method</a>
+              <a href="{{route('method.create',$slug)}}" class="btn btn-md btn-default">Add Service Method</a>
             </div>
           </div>
         </div>
@@ -27,7 +27,7 @@
           <div class="card">
             <!-- Card header -->
             <div class="card-header">
-              <h1 class="mb-0">Services Method</h1>
+              <h1 class="mb-0">-Price Calculation Method</h1>
               
             </div>
             <div class="table-responsive py-4">
@@ -53,7 +53,7 @@
                     <td style="color:red">Deactivate</td>
                     @endif
                     <td> 
-                    <a href="{{route('unit.index')}}"><button type="button" class="btn btn-outline-default" >Method Unit</button> </a>
+                    <a href="{{route('unit.index')}}"><button type="button" class="btn btn-outline-default" >Unit Pricing</button> </a>
                     </td>
                     {{--<td> 
                     <a href="{{route('method.show',$method['slug'])}}">

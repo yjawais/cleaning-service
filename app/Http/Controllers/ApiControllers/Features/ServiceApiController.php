@@ -8,6 +8,7 @@ use\App\Models\Service;
 use\App\Models\ServiceAddon;
 use\App\Models\ServicesMethod;
 use\App\Models\ServiceMethodsUnit;
+use\App\Models\Method;
 use Illuminate\Support\Str; 
 
 
@@ -189,7 +190,20 @@ class ServiceApiController extends ApiController
     //addon ends , pricing (method) starts
     public function getAllMethods($data){
         try{
-            $servDb = ServicesMethod::get(); 
+            $methodDb = Method::get(); 
+            return $this->success($methodDb,200);
+        }catch(Exception $e){
+            return $this->failed('Given data is not existis.',202);
+        }
+
+    }
+    public function getServiceMethods($data){
+        try{
+            $decodedData= json_decode($data,true);
+            // dd($decodedData);
+            // $serviceId = Service::select('id')->where('slug',$decodedData['slug'])->first()['id'];
+             $servDb = Method::get(); 
+            // // dd($servDb);
             return $this->success($servDb,200);
         }catch(Exception $e){
             return $this->failed('Given data is not existis.',202);
@@ -197,15 +211,16 @@ class ServiceApiController extends ApiController
 
     }
 
+
     public function storeMethod($data){ 
         try{
              $decodedData= json_decode($data,true); 
-             $serviceDb = new ServicesMethod();   
-             $serviceDb->method_title = $decodedData['method_title'];
-            $serviceDb->position = $decodedData['position']; 
-            $serviceDb->slug = Str::slug($decodedData['method_title'], '-'); 
+             $methodDb = new Method();   
+             $methodDb->method_title = $decodedData['method_title'];
+            $methodDb->position = $decodedData['position']; 
+            $methodDb->slug = Str::slug($decodedData['method_title'], '-'); 
         //  $sliderDb->created_by = $this->user()->id;
-           $serviceDb->save(); 
+           $methodDb->save(); 
              return $this->successMessage('Added Successfully.',200);
         }catch(Exception $e){
             return $this->failed('Given table is not existis.',202);
