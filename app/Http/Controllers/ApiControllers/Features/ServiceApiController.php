@@ -73,6 +73,18 @@ class ServiceApiController extends ApiController
        
     }
 
+    public function getServiceIdBySlug($data){
+        try{
+            $decodedData= json_decode($data,true); 
+            $serviceDb = Service::select('id')->where('slug',$decodedData['slug'])->first()['id']; 
+            // dd($serviceDb);
+            return $this->success($serviceDb,200);
+        }catch(Exception $e){
+            return $this->failed('Given data is not existis.',202);
+        }
+       
+    }
+
     public function updateService($data){ 
         try{
              $decodedData= json_decode($data,true);
@@ -214,13 +226,23 @@ class ServiceApiController extends ApiController
 
     public function storeMethod($data){ 
         try{
-             $decodedData= json_decode($data,true); 
-             $methodDb = new Method();   
-             $methodDb->method_title = $decodedData['method_title'];
-            $methodDb->position = $decodedData['position']; 
-            $methodDb->slug = Str::slug($decodedData['method_title'], '-'); 
+             $decodedData= json_decode($data,true);
+             if(!empty($decodedData['method_title'])){
+                $methodDb = new Method();   
+                $methodDb->method_title = $decodedData['method_title'];
+                $methodDb->slug = Str::slug($decodedData['method_title'], '-'); 
+                $methodDb->save(); 
+                $method_id= $methodDb->id;
+             }
+             else{
+                $method_id= $decodedData['method_title_id'];
+             }
+
+             $service_methodDb = new ServicesMethod();   
+             $service_methodDb->service_id = $decodedData['service_id'];
+            $service_methodDb->method_id = $method_id;  
         //  $sliderDb->created_by = $this->user()->id;
-           $methodDb->save(); 
+           $service_methodDb->save(); 
              return $this->successMessage('Added Successfully.',200);
         }catch(Exception $e){
             return $this->failed('Given table is not existis.',202);

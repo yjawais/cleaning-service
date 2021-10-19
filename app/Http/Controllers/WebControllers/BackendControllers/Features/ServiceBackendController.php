@@ -239,15 +239,19 @@ public function addonstore(Request $request)
       {
         $validated = $request->validate([
           'method_title' => 'max:255',
-          'position'=>'required'
       ]);
-          $service_api_controller = new ServiceApiController; 
-          $data1 = json_encode($request->all()); 
-          $data2 = json_encode(array('datakey'=>"webapplication"));  
-          $data =json_encode(array_merge(json_decode($data1, true),json_decode($data2, true)));
-          $method = $service_api_controller->storeMethod($data); 
-          $encodedData= json_decode($method->content(),true);     
-          return redirect()->back()->with('success',$encodedData['message']);
+          $service_api_controller = new ServiceApiController;
+          $data1 = json_encode(array('datakey'=>"webapplication",'slug'=>request('slug'))); 
+          $service_db = $service_api_controller->getServiceBySlug($data1);
+          $serviceEncodedData= json_decode($service_db->content(),true);
+          $encodedobject=$serviceEncodedData['data'] ;
+          dd($encodedobject);
+          // $data2 = json_encode(array('datakey'=>"webapplication",'service_id'=>$encodedobject)); 
+          // $data3 = json_encode($request->all());   
+          // $data =json_encode(array_merge(json_decode($data2, true),json_decode($data3, true)));
+          // $method = $service_api_controller->storeMethod($data); 
+          // $encodedData= json_decode($method->content(),true);     
+          // return redirect()->back()->with('success',$encodedData['message']);
           } 
 
     //pricing(methods unit)  view starts
