@@ -12,7 +12,7 @@ class StaffBackendController extends BackendController
 
 {
    /**
-       * Prepare For UserConfigration.
+       * Prepare For StaffApiControlller.
        *
        * @param mixed $request
        * @author Anjali Gaikwad
@@ -32,6 +32,8 @@ class StaffBackendController extends BackendController
        *            }
        *             
        */
+
+      //Index function starts
       public function index()
       {
              $sr = 0;
@@ -54,14 +56,19 @@ class StaffBackendController extends BackendController
                   ]);
    
       }
+      //Index function ends
    
+      //Create function starts
       public function create(){
         return view('Staff.StaffCreate');
   
       }
+      //Create function ends
 
+      //Store function starts
       public function store(Request $request)
       {
+      //below is the validation for user input data
        $validated = $request->validate([ 
         'fname' => ['required', 'string', 'max:255'],
         'lname' => ['required', 'string', 'max:255'],
@@ -81,7 +88,9 @@ class StaffBackendController extends BackendController
        return redirect()->back()->with('success',$encodedData['message']);
 
       }
+      //Store function ends
 
+      //Show function starts
       public function show( $id){
         $staff_api_controller = new StaffApiController; 
         $data = json_encode(array('datakey'=>"webapplication",'id'=>$id));   
@@ -101,7 +110,10 @@ class StaffBackendController extends BackendController
             'roles' => $encodedobject2,
           ]);
         }
+      //Show function ends
 
+
+      //Edit function starts
       public function edit( $id){
         $staff_api_controller = new StaffApiController; 
         $data = json_encode(array('datakey'=>"webapplication",'id'=>$id));       
@@ -120,9 +132,12 @@ class StaffBackendController extends BackendController
             'roles' => $encodedobject2,
         ]);
       }
+      //Edit function ends
 
+      //Update function starts
       public function update(Request $request, $id)
       {
+      //below is the validation for user input data
        $validated = $request->validate([
         'fname' => ['required', 'string', 'max:255'],
         'lname' => ['required', 'string', 'max:255'],
@@ -138,7 +153,9 @@ class StaffBackendController extends BackendController
        $encodedData= json_decode($staff->content(),true);
        return redirect()->back()->with('success',$encodedData['message']);
       }
-   
+      //Update function ends
+
+      //Destroy function starts
       public function destroy($id)
       {
        $staff_api_controller = new StaffApiController;
@@ -147,4 +164,5 @@ class StaffBackendController extends BackendController
        $encodedData= json_decode($Staff->content(),true);
        return redirect()->back()->with('success',$encodedData['message']);
       }
-}
+      //Destroy function ends
+    }

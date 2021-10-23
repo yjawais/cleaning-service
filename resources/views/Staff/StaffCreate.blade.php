@@ -14,9 +14,7 @@
                 <div class="col-lg-6 col-7">
                 </div>
                 <div class="col-lg-6 col-5 text-right">
-                    <!-- <button type="button" class="btn btn-md btn-default" href="{{route('superadmin.staff')}}">Back</button> -->
                         <a class="btn btn-md btn-default " href="{{route('superadmin.staff')}}">Back</a> 
-          <!-- <a href="#" class="btn btn-sm btn-neutral">Filters</a> --> 
                 </div>
             </div>
         </div>

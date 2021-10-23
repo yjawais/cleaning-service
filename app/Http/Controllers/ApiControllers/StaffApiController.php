@@ -1,14 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\ApiControllers;
-use App\Http\Controllers\ApiControllers\Staff\StaffBackendController;
 use App\Http\Controllers\ApiControllers\ApiController;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use App\Models\Role;
 use App\Models\User;
-use App\Models\Staff;
-use App\Models\StaffDetail;
 use App\Models\RoleUser;
 use Exception;
 
@@ -16,7 +12,7 @@ class StaffApiController extends ApiController
 {
 
      /**
-       * Prepare For UserConfigration.
+       * Prepare For Staff.
        *
        * @param mixed $request
        * @author Anjali Gaikwad
@@ -32,7 +28,11 @@ class StaffApiController extends ApiController
        *            }
        *             
        */
-      public function getAllStaff($data){  
+
+    // This function will display all staff details from users table in the StaffIndex page
+    // GetAllStaff function starts
+
+    public function getAllStaff($data){  
         try{
             $userDb = User::get(); 
           //  dd($userDb);
@@ -54,6 +54,11 @@ class StaffApiController extends ApiController
         // }
        
     }
+    // GetAllStaff function ends
+
+
+    // This function will display specific staff detail depending to their id on the StaffShow and StaffEdit page
+    // GetStaff function starts
 
     public function getStaff($data){
         try{
@@ -67,6 +72,11 @@ class StaffApiController extends ApiController
         }
        
     }
+    // GetStaff function ends
+
+
+    // This function contains store data logic for the staff when clicked on submit button on staffCreate page with respect to the partricular staff id
+    // StoreStaff function starts
 
     public function storeStaff($data){ 
         try{ 
@@ -87,7 +97,12 @@ class StaffApiController extends ApiController
         }
        
     }
+    // StoreStaff function ends
+
  
+    // This function contains update data logic for the staff when clicked on edit button on staffIndex page according to the partricular staff id
+    // UpdateStaff function starts
+
     public function updateStaff($data){ 
        try{
              $decodedData= json_decode($data,true);
@@ -113,7 +128,12 @@ class StaffApiController extends ApiController
         }
        
     } 
+    // UpdateStaff function ends
 
+
+    // This function will delete the staff when clicked on delete button on staffIndex page according to the partricular staff id
+    // DeleteStaff function starts
+   
     public function deleteStaff($data){ 
         try{
              $decodedData= json_decode($data,true);
@@ -130,4 +150,6 @@ class StaffApiController extends ApiController
         }
        
     }
+    // DeleteStaff function ends
+
 }
