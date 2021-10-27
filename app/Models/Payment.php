@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Payment extends Model
 {
+    protected $table = 'payments';
     use HasFactory;
     use SoftDeletes;
     protected $dates = ['deleted_at'];
