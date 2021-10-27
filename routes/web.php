@@ -74,6 +74,11 @@ Route::post('/faq/update/{id}', 'WebControllers\BackendControllers\Features\FaqB
 Route::get('/faq/{id}', 'WebControllers\BackendControllers\Features\FaqBackendController@destroy')->name('destroy.faq')->middleware('auth');
 // Route For faq End 
 
+// Route For Payment
+Route::get('/payments', 'WebControllers\BackendControllers\Features\PaymentBackendController@index')->name('payment.index')->middleware('auth');
+Route::get('/payment/view/{id}', 'WebControllers\BackendControllers\Features\PaymentBackendController@show')->name('payment.show')->middleware('auth');
+Route::get('/payment/{id}', 'WebControllers\BackendControllers\Features\PaymentBackendController@destroy')->name('payment.destroy')->middleware('auth');
+//Route For Payment End
 
 // Route For Sms Templet Start
  Route::get('/smstemplet', 'WebControllers\BackendControllers\Features\SmsTemplateBackendController@index')->name('smstemplet.view')->middleware('auth');

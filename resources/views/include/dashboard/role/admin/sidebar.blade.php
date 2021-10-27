@@ -157,9 +157,16 @@
                       <span class="sidenav-normal">Services</span>
                     </a>
                   </li>
+                  <li class="nav-item">
+                    <a href="{{route('payment.index')}}" class="nav-link">
+                      <span class="sidenav-mini-icon"> P </span>
+                      <span class="sidenav-normal">Payment</span>
+                    </a>
+                  </li>
 
                 </ul>
               </div>
+
             </li>
    
           
