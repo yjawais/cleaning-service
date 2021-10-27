@@ -23,8 +23,8 @@ function check(elem) {
             <div class="col-lg-6 col-7">
             </div>
             <div class="col-lg-6 col-5 text-right">
-            <!-- <a href="{{route('method.create')}}" class="btn btn-md btn-default">Add Method</a>  -->
-             <a href="{{route('method.index')}}" class="btn btn-md btn-default">View</a> 
+            {{-- <a href="{{route('method.create')}}" class="btn btn-md btn-default">Add Method</a>  --}}
+             <a href="{{route('method.index',$slug)}}" class="btn btn-md btn-default">View</a> 
             </div>
           </div>
         </div>
@@ -58,7 +58,7 @@ function check(elem) {
           <!-- Form groups used in grid -->
           <form role="form" action="{{route('method.store')}}" method="POST" enctype="multipart/form-data">
           @csrf
-          <input type="hidden" name = "service_slug" value={{$slug}}>
+          <input type="hidden" name="service_slug" value={{$slug}}>
           <div class="row">
           <div class="col-md-6">
             <div class="form-group">
