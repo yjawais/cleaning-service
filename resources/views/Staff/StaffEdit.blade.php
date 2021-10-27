@@ -108,58 +108,14 @@
                             </div>
                         </div>
                         <div class="row">
-                            {{-- <div class="col-md-6">
-                                <div class="form-group row">
-                                    <label for="example-text-input" class="col-md-4 col-form-label form-control-label">Email Verified</label>
-                                    <div class="col-md-8">
-                                        <input class="form-control" value="{{$staff['email_verified_at']}}" name="email_verified_at" type="datetime-local" id="example-datetime-local-input">
-                        </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary my-4">Submit</button>
+                            </div>
+                    </form>
                 </div>
-            </div>--}}
-            {{-- <div class="col-md-6">
-                                <div class="form-group row">
-                                    <label for="example-text-input" class="col-md-4 col-form-label form-control-label">Role</label>
-                                    <div class="col-md-8">
-                                    <select style="color:black" class="form-control" data-toggle="select" id="user_type" name="user_type">
-                                            @foreach($roles as $role)
-                                            <option value="{{$role['id']}}" <?php if ($role['id'] == $staff['role']['role_id']) echo 'selected="selected"'; ?>>{{$role['name']}}</option>
-            @endforeach
-            </select>
-        </div>
-    </div>
-</div>
-</div>
-
-<div class="row">
-    <div class="col-md-6">
-        <div class="form-group row">
-            <label for="example-text-input" class="col-md-4 col-form-label form-control-label">Status</label>
-            <div class="col-md-8">
-
-                <select style="color:black" class="form-control" id="status" name="status">
-                    @if($staff['role']['is_activate'] == true)
-                    <option value="true">Activate</option>
-                    <option value="false">Inactivate</option>
-                    @endif
-                    @if($staff['role']['is_activate'] == false)
-                    <option value="false">Inactivate</option>
-                    <option value="true">Activate</option>
-                    @endif
-                </select>
             </div>
         </div>
     </div>
-</div>--}}
-
-<div class="text-center">
-    {{-- <input name="role_id" value="{{$staff['role']['role_id']}}" type="hidden">--}}
-    <button type="submit" class="btn btn-primary my-4">Submit</button>
-</div>
-</form>
-</div>
-</div>
-</div>
-</div>
 </div>
 </div>
 @endsection

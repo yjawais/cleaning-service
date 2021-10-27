@@ -35,19 +35,12 @@
                   </a>
                 </li>
 
-                <li class="nav-item">
-              <a class="nav-link" href="{{route('superadmin.staff')}}" role="button" aria-controls="navbar-Staff">
-                <i class="ni ni-badge text-primary"></i>
-                <span class="nav-link-text">Staff</span>
-              </a>
-            </li>
-
             <li class="nav-item">
               <a class="nav-link" href="#navbar-dashboards" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-dashboards">
-                <i class="ni ni-shop text-primary"></i>
+                <i class="ni ni-shop text-info"></i>
                 <span class="nav-link-text">Dashboards</span>
               </a>
-              <div class="collapse show" id="navbar-dashboards">
+              <div class="collapse" id="navbar-dashboards">
                 <ul class="nav nav-sm flex-column">
                   <li class="nav-item">
                     <a href="" class="nav-link">
@@ -90,7 +83,7 @@
                   </li>
 
                   <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{route('social.index')}}" class="nav-link">
                       <span class="sidenav-mini-icon"> S </span>
                       <span class="sidenav-normal">Social Settings</span>
                     </a>
@@ -169,8 +162,32 @@
               </div>
             </li>
    
-          
-          </ul>
+            <li class="nav-item">
+              <a class="nav-link" href="#navbar-users" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-users">
+                <i class="ni ni-ui-04 text-info"></i>
+                <span class="nav-link-text">Users</span>
+              </a>
+              <div class="collapse" id="navbar-users">
+                <ul class="nav nav-sm flex-column">
+                
+                  <li class="nav-item">
+                    <a href="{{route('superadmin.staff')}}" class="nav-link">
+                      <span class="sidenav-mini-icon"> S </span>
+                      <span class="sidenav-normal">Staff</span>
+                    </a>
+                  </li>
+              
+                <li class="nav-item">
+                    <a href=" " class="nav-link">
+                      <span class="sidenav-mini-icon"> U </span>
+                      <span class="sidenav-normal">User</span>
+                    </a>
+                  </li>
+
+                </ul>
+              </div>
+            </li>         
+           </ul>
           <!-- Divider -->
           <hr class="my-3">
           <!-- Heading -->

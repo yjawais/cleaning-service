@@ -65,13 +65,13 @@
                             @foreach($staffs as $staff)
                             <tr>
                                 <td>{{$sr=$sr+1}}</td>
-                                <td>{{$staff['fname']}} {{$staff['lname']}}</td>
-                                <td>{{$staff['email']}}</td>
-                                <td>{{$staff['mobile_number']}}</td>
-                                @if($staff['email_verified_at'] == null)
+                                <td>{{$staff['user']['fname']}} {{$staff['user']['lname']}}</td>
+                                <td>{{$staff['user']['email']}}</td>
+                                <td>{{$staff['user']['mobile_number']}}</td>
+                                @if($staff['user']['email_verified_at'] == null)
                                 <td style="color:red">No</td>
                                 @endif
-                                @if($staff['email_verified_at'] != null)
+                                @if($staff['user']['email_verified_at'] != null)
                                 <td style="color:green">Yes</td>
                                 @endif
 
@@ -83,16 +83,16 @@
                                 <td style="color:red">Deactivate</td>
                                 @endif--}}
                                 <td>
-                                    <a href="{{route('superadmin.staff.show',$staff['id'])}}"><button type="button" class="btn btn-success btn-icon-only rounded-circle">
+                                    <a href="{{route('superadmin.staff.show',$staff['user']['id'])}}"><button type="button" class="btn btn-success btn-icon-only rounded-circle">
 
                                             <i class="ni ni-album-2"></i>
                                         </button></a>
 
-                                    <a href="{{route('superadmin.staff.edit',$staff['id'])}}"><button type="button" class="btn btn-primary btn-icon-only rounded-circle">
+                                    <a href="{{route('superadmin.staff.edit',$staff['user']['id'])}}"><button type="button" class="btn btn-primary btn-icon-only rounded-circle">
                                             <i class="ni ni-ruler-pencil" style="color:white"></i>
                                         </button></a>
 
-                                    <a href="{{route('superadmin.staff.destroy',$staff['id'])}}"><button type="button" class="btn btn-danger btn-icon-only rounded-circle">
+                                    <a href="{{route('superadmin.staff.destroy',$staff['user']['id'])}}"><button type="button" class="btn btn-danger btn-icon-only rounded-circle">
                                             <i class="ni ni-scissors" style="color:white"></i>
                                         </button>
                                     </a>

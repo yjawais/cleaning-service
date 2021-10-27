@@ -64,17 +64,17 @@
                     <div class="form-group row">
                         <label for="example-text-input" class="col-md-4 col-form-label form-control-label">Contact</label>
                         <div class="col-md-8">
-                            <input style="color:black" name="	mobile_number" class="form-control" type="text" value="{{$staff['mobile_number']}}" id="example-text-input" disabled>
+                            <input style="color:black" name="mobile_number" class="form-control" type="text" value="{{$staff['mobile_number']}}" id="example-text-input" disabled>
                         </div>
                     </div>
 
-                    {{-- <div class="form-group row">
+                   {{-- <div class="form-group row">
                             <label for="example-text-input" class="col-md-4 col-form-label form-control-label">Role</label>
                             <div class="col-md-8">
-                                <input class="form-control" type="text" value="{{$staff['role_type']}}" id="example-text-input" disabled>
+                                <input class="form-control" type="text" value="{{$staff['roles']}}" id="example-text-input" disabled>
             </div>
-        </div>
-        <div class="form-group row">
+        </div>--}}
+        {{--<div class="form-group row">
             <label for="example-text-input" class="col-md-4 col-form-label form-control-label">Status</label>
             <div class="col-md-8">
                 @if($staff['role']['is_activate'] == true)

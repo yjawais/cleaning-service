@@ -102,10 +102,10 @@
                             <label for="example-text-input" class="col-md-4 col-form-label form-control-label">User Type</label>
                             <div class="col-md-8">
                                 <select style="color:black" class="form-control" data-toggle="select" id="user_type" name="user_type">
-                                 {{--   <option value="user">Select Role</option>
+                                  <option>Select Role</option>
                                     @foreach($roles as $role)
                                     <option value="{{$role['name']}}">{{$role['name']}}</option>
-                                    @endforeach--}}
+                                    @endforeach
                                 </select>
                             </div>
                         </div>

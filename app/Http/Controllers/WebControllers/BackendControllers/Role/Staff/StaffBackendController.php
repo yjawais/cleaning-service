@@ -6,6 +6,7 @@ namespace App\Http\Controllers\WebControllers\BackendControllers;
 use App\Http\Controllers\ApiControllers\Configration\RoleApiController;
 use App\Http\Controllers\ApiControllers\StaffApiController;
 use App\Http\Controllers\WebControllers\BackendControllers\BackendController;
+use App\Http\Controllers\WebControllers\BackendControllers\BackendController\Role\Staff;
 use Illuminate\Http\Request;
 
 class StaffBackendController extends BackendController
@@ -47,7 +48,7 @@ class StaffBackendController extends BackendController
              $role = $role_api_controller->getAllRole($data);
              $encodedData1= json_decode($role->content(),true);  
              $encodedobject2 = $encodedData1['data'] ;
-                       //   dd($encodedobject2);       
+                       //  dd($encodedobject2);       
 
               return view('Staff.StaffIndex', [
                   'staffs' =>  $encodedobject,
@@ -60,7 +61,17 @@ class StaffBackendController extends BackendController
    
       //Create function starts
       public function create(){
-        return view('Staff.StaffCreate');
+        $data = json_encode(array('datakey'=>"webapplication"));
+        $role_api_controller = new RoleApiController; 
+        $role = $role_api_controller->getAllActiveRole($data);
+        $encodedData1= json_decode($role->content(),true);  
+        $encodedobject2 = $encodedData1['data'] ;
+                  //  dd($encodedobject2);       
+
+        return view('Staff.StaffCreate',[                
+          'roles' => $encodedobject2,
+
+      ]);
   
       }
       //Create function ends
@@ -82,9 +93,9 @@ class StaffBackendController extends BackendController
        $data2 = json_encode(array('datakey'=>"webapplication"));  
        //dd($data2);
        $data =json_encode(array_merge(json_decode($data1, true),json_decode($data2, true)));
+       //dd($data);
        $staff = $staff_api_controller->storeStaff($data);
        $encodedData= json_decode($staff->content(),true); 
-       $encodedobject=$encodedData['data'] ;    
        return redirect()->back()->with('success',$encodedData['message']);
 
       }
@@ -101,7 +112,7 @@ class StaffBackendController extends BackendController
         $encodedobject=$encodedData['data'] ;
         //dd($encodedobject);
         $role_api_controller = new RoleApiController; 
-        $role = $role_api_controller->getAllRole($data);
+        $role = $role_api_controller->getRole($data);
         $encodedData1= json_decode($role->content(),true);  
         $encodedobject2 = $encodedData1['data'] ;
                   //   dd($encodedobject2); 
@@ -123,7 +134,7 @@ class StaffBackendController extends BackendController
         $encodedobject=$encodedData['data'] ;
        // dd($encodedobject);
        $role_api_controller = new RoleApiController; 
-       $role = $role_api_controller->getAllRole($data);
+       $role = $role_api_controller->getAllActiveRole($data);
        $encodedData1= json_decode($role->content(),true);  
        $encodedobject2 = $encodedData1['data'] ;
                  //   dd($encodedobject2);
@@ -143,7 +154,7 @@ class StaffBackendController extends BackendController
         'lname' => ['required', 'string', 'max:255'],
         'email' => ['required', 'string', 'email', 'max:255'],
         'mobile_number' => ['required', 'numeric', 'min:10'],
-        'user_type'=> ['required'],
+     //   'user_type'=> ['required'],
        ]);
        $staff_api_controller = new StaffApiController;
        $data1 = json_encode($request->all()); 
