@@ -46,13 +46,13 @@ Route::get('/', 'WebControllers\FrontendControllers\LandingFrontendController@in
 
 
 // Route For Staff Start
-Route::get('/staff', 'WebControllers\BackendControllers\Role\Staff\StaffBackendController@index')->name('superadmin.staff')->middleware('auth');
-Route::get('/staff/create', 'WebControllers\BackendControllers\Role\Staff\StaffBackendController@create')->name('superadmin.staff.create')->middleware('auth');
-Route::post('/staff', 'WebControllers\BackendControllers\Role\Staff\StaffBackendController@store')->name('superadmin.staff.store')->middleware('auth');
-Route::get('/staff/view/{id}', 'WebControllers\BackendControllers\Role\Staff\StaffBackendController@show')->name('superadmin.staff.show')->middleware('auth');
-Route::get('/staff/edit/{id}', 'WebControllers\BackendControllers\Role\Staff\StaffBackendController@edit')->name('superadmin.staff.edit')->middleware('auth');
-Route::get('/staff/update/{id}', 'WebControllers\BackendControllers\Role\Staff\StaffBackendController@update')->name('superadmin.staff.update')->middleware('auth');
-Route::get('/staff/{id}', 'WebControllers\BackendControllers\Role\Staff\StaffBackendController@destroy')->name('superadmin.staff.destroy')->middleware('auth');
+Route::get('/staff', 'WebControllers\BackendControllers\StaffBackendController@index')->name('superadmin.staff')->middleware('auth');
+Route::get('/staff/create', 'WebControllers\BackendControllers\StaffBackendController@create')->name('superadmin.staff.create')->middleware('auth');
+Route::post('/staff', 'WebControllers\BackendControllers\StaffBackendController@store')->name('superadmin.staff.store')->middleware('auth');
+Route::get('/staff/view/{id}', 'WebControllers\BackendControllers\StaffBackendController@show')->name('superadmin.staff.show')->middleware('auth');
+Route::get('/staff/edit/{id}', 'WebControllers\BackendControllers\StaffBackendController@edit')->name('superadmin.staff.edit')->middleware('auth');
+Route::get('/staff/update/{id}', 'WebControllers\BackendControllers\StaffBackendController@update')->name('superadmin.staff.update')->middleware('auth');
+Route::get('/staff/{id}', 'WebControllers\BackendControllers\StaffBackendController@destroy')->name('superadmin.staff.destroy')->middleware('auth');
 // Route For staff End 
 
 // Route For Language Code Start
