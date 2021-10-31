@@ -67,6 +67,16 @@ Route::post('/user-configration/update/{id}', 'WebControllers\BackendControllers
 Route::get('/user-configration/{id}', 'WebControllers\BackendControllers\Configration\UserConfigrationBackendController@destroy')->name('superadmin.user.destroy')->middleware('auth');
 // Route For user End 
 
+// Route For User Start
+Route::get('/user', 'WebControllers\BackendControllers\UserBackendController@index')->name('user')->middleware('auth');
+Route::get('/user/create', 'WebControllers\BackendControllers\UserBackendController@create')->name('user.create')->middleware('auth');
+Route::post('/user', 'WebControllers\BackendControllers\UserBackendController@store')->name('user.store')->middleware('auth');
+Route::get('/user/view/{id}', 'WebControllers\BackendControllers\UserBackendController@show')->name('user.show')->middleware('auth');
+Route::get('/user/edit/{id}', 'WebControllers\BackendControllers\UserBackendController@edit')->name('user.edit')->middleware('auth');
+Route::get('/user/update/{id}', 'WebControllers\BackendControllers\UserBackendController@update')->name('user.update')->middleware('auth');
+Route::get('/user/{id}', 'WebControllers\BackendControllers\UserBackendController@destroy')->name('user.destroy')->middleware('auth');
+// Route For user End 
+
 // Route For faq Start
 Route::get('/getfaq', 'WebControllers\BackendControllers\Features\FaqBackendController@index')->name('index.faq')->middleware('auth');
 Route::post('/addfaq', 'WebControllers\BackendControllers\Features\FaqBackendController@store')->name('store.faq')->middleware('auth');
