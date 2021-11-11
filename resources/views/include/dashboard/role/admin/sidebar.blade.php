@@ -3,7 +3,7 @@
     <div class="scrollbar-inner">
       <!-- Brand -->
       <div class="sidenav-header  d-flex  align-items-center">
-        <a class="navbar-brand" href="">
+        <a class="navbar-brand" href="{{route('home')}}">
           <!-- <img src="{{asset('adminPanel/img/brand/kaliba.png')}}" class="navbar-brand-img" alt="..."> -->
           KALIBA
         </a>
@@ -29,18 +29,18 @@
           <ul class="navbar-nav">
               <li class="nav-item">
                   
-                  <a class="nav-link" href="#navbar-dashboards" aria-controls="navbar-dashboards">
+                  <a class="nav-link" href="{{route('home')}}" aria-controls="navbar-dashboards">
                       <i class="ni ni-badge text-primary"></i>
                     <span class="nav-link-text"> {{ Auth::user()->roles[0]->name }}  </span>
                   </a>
                 </li>
-  
+
             <li class="nav-item">
               <a class="nav-link" href="#navbar-dashboards" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-dashboards">
-                <i class="ni ni-shop text-primary"></i>
+                <i class="ni ni-shop text-info"></i>
                 <span class="nav-link-text">Dashboards</span>
               </a>
-              <div class="collapse show" id="navbar-dashboards">
+              <div class="collapse" id="navbar-dashboards">
                 <ul class="nav nav-sm flex-column">
                   <li class="nav-item">
                     <a href="" class="nav-link">
@@ -83,7 +83,7 @@
                   </li>
 
                   <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{route('social.index')}}" class="nav-link">
                       <span class="sidenav-mini-icon"> S </span>
                       <span class="sidenav-normal">Social Settings</span>
                     </a>
@@ -169,6 +169,7 @@
               </div>
 
             </li>
+   
             <li class="nav-item">
               <a class="nav-link" href="#navbar-users" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-users">
                 <i class="ni ni-ui-04 text-info"></i>
@@ -177,27 +178,24 @@
               <div class="collapse" id="navbar-users">
                 <ul class="nav nav-sm flex-column">
                 
-                <li class="nav-item">
-                    <a href="{{route('')}}" class="nav-link">
+                  <li class="nav-item">
+                    <a href="{{route('superadmin.staff')}}" class="nav-link">
                       <span class="sidenav-mini-icon"> S </span>
                       <span class="sidenav-normal">Staff</span>
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <a href="{{route('user')}}" class="nav-link">
+              
+                <li class="nav-item">
+                    <a href=" " class="nav-link">
                       <span class="sidenav-mini-icon"> U </span>
                       <span class="sidenav-normal">User</span>
                     </a>
                   </li>
-                 
 
                 </ul>
               </div>
-
-            </li>
-
-
-          </ul>
+            </li>         
+           </ul>
           <!-- Divider -->
           <hr class="my-3">
           <!-- Heading -->
