@@ -15,8 +15,7 @@
             <button type="button" class="btn btn-md btn-default"  style="float: left;" data-toggle="modal" data-target="#modal-form-add-break">Add Break</button>   
             </div>
              <div class="col-lg-6 col-5 text-right">
-            <button type="button" class="btn btn-md btn-default" data-toggle="modal" data-target="#modal-form-weekly">WEEKLY</button>
-            <button type="button" class="btn btn-md btn-default" data-toggle="modal" data-target="#modal-form-monthly">MONTHLY</button>
+             <a href="{{route('schedulebreakcalender.index')}}"> <button type="button" class="btn btn-md btn-default">CALENDER</button></a>
               <!-- <a href="#" class="btn btn-sm btn-neutral">New</a> -->
               <!-- <a href="#" class="btn btn-sm btn-neutral">Filters</a> -->
             </div>
@@ -202,102 +201,6 @@
     </div>
     
     
-<!-- week break form -->
-    <div class="modal fade" id="modal-form-weekly" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="false">
-                    <div class="modal-dialog modal- modal-dialog-centered modal-md" role="document">
-                      <div class="modal-content">
-                        <div class="modal-body p-0">
-                          <div class="card bg-secondary border-0 mb-0">
-                            <div class="card-header bg-transparent pb-5">
-                              <div class="text-muted text-center mt-2 mb-3"><h1>Weekly Break</h1></div>
-                              
-                            </div>
-                            <div class="card-body px-lg-5 py-lg-5">
-                           
-                              <form role="form" action="" >
-                               
-              
-                              <div class="form-group row">
-                              <div class="table-responsive py-4">
-              <table class="table table-flush" id="datatable-buttons">
-                <thead class="thead-light">
-                  <tr>
-                    <th>Weekday</th>
-                    <th>Offtime</th>
-                  </tr>
-                </thead>
-                <tr> <td> Monday</td></tr>
-                <tr> <td> Tuesday</td></tr>
-                <tr> <td> Wednesday</td></tr>
-                <tr> <td> Thursday</td></tr>
-                <tr> <td> Friday</td></tr>
-                <tr> <td> Saturday</td></tr>
-                <tr> <td> Sunday</td></tr>
-                </table>
-                
-                      
-                     
-                  <div class="text-center">
-                                  <button type="submit" class="btn btn-primary my-4">Close</button>
-                                </div>                               
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div> 
-                </div>
-              </div> 
-
-<!-- monthly break view -->
-              <div class="modal fade" id="modal-form-monthly" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="false">
-                    <div class="modal-dialog modal- modal-dialog-centered modal-md" role="document">
-                      <div class="modal-content">
-                        <div class="modal-body p-0">
-                          <div class="card bg-secondary border-0 mb-0">
-                            <div class="card-header bg-transparent pb-5">
-                              <div class="text-muted text-center mt-2 mb-3"><h1>Monthly Break</h1></div>
-                              
-                            </div>
-                            <div class="card-body px-lg-5 py-lg-5">
-                           
-                              <form role="form" action="" >
-                               
-              
-                              <div class="form-group row">
-                              <div class="table-responsive py-4">
-              <table class="table table-flush" id="datatable-buttons">
-                <thead class="thead-light">
-                  <tr>
-                    <th>Weekday</th>
-                    <th>Offtime</th>
-                  </tr>
-                </thead>
-                <tr> <td> Monday</td></tr>
-                <tr> <td> Tuesday</td></tr>
-                <tr> <td> Wednesday</td></tr>
-                <tr> <td> Thursday</td></tr>
-                <tr> <td> Friday</td></tr>
-                <tr> <td> Saturday</td></tr>
-                <tr> <td> Sunday</td></tr>
-                </table>
-                
-                      
-                     
-                  <div class="text-center">
-                                  <button type="submit" class="btn btn-primary my-4">Close</button>
-                                </div>                               
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div> 
-                </div>
-              </div> 
-
 
 <!-- add break form -->
               <div class="modal fade" id="modal-form-add-break" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="false">

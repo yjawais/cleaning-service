@@ -109,6 +109,15 @@ Route::get('/slider/view/{slug}', 'WebControllers\BackendControllers\Features\Sl
 // // Route For  Social setting End 
 
 
+// Route For Services
+Route::get('/services', 'WebControllers\BackendControllers\Features\ServiceBackendController@index')->name('service.index')->middleware('auth');
+Route::get('/service/create', 'WebControllers\BackendControllers\Features\ServiceBackendController@create')->name('service.create')->middleware('auth');
+Route::post('/services', 'WebControllers\BackendControllers\Features\ServiceBackendController@store')->name('service.store')->middleware('auth');
+Route::get('/service/view/{slug}', 'WebControllers\BackendControllers\Features\ServiceBackendController@show')->name('service.show')->middleware('auth');
+Route::get('/service/edit/{slug}', 'WebControllers\BackendControllers\Features\ServiceBackendController@edit')->name('service.edit')->middleware('auth');
+Route::post('/service/update/{id}', 'WebControllers\BackendControllers\Features\ServiceBackendController@update')->name('service.update')->middleware('auth');
+Route::get('/service/{id}', 'WebControllers\BackendControllers\Features\ServiceBackendController@destroy')->name('service.destroy')->middleware('auth');
+
 // Sandbox Route
 
 
@@ -167,3 +176,16 @@ Route::post('/add_schedule-offtime', 'WebControllers\BackendControllers\Schedule
 Route::post('/schedule-offtime/update/{id}', 'WebControllers\BackendControllers\Schedule\ScheduleOfftimeBackendController@update')->name('update.scheduleofftime')->middleware('auth');
 Route::get('/schedule-offtime/{id}', 'WebControllers\BackendControllers\Schedule\ScheduleOfftimeBackendController@destroy')->name('destroy.scheduleofftime')->middleware('auth');
 // Route For schedule offtime End 
+
+Route::get('/get_schedulebreakcalender', 'WebControllers\BackendControllers\Schedule\ScheduleCalenderBackendController@index')->name('schedulebreakcalender.index')->middleware('auth');
+
+
+//route for landing page start
+Route::get('/user-home', 'WebControllers\FrontendControllers\LandingFrontendController@index');
+Route::get('/about-us', 'WebControllers\FrontendControllers\AboutUsFrontendController@index')->name('aboutus');
+Route::get('/privacy-policy', 'WebControllers\FrontendControllers\PrivacyPolicyFrontendController@index')->name('privacy-policy');
+//route for landing page end
+
+//route for contact us start
+Route::post('/contact-us', 'WebControllers\FrontendControllers\LandingFrontendController@contactUs')->name('contact-us');
+//route for contact us end

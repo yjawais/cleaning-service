@@ -24,7 +24,7 @@ class CreateServicesTable extends Migration
             $table->string('created_by')->nullable()->comment='Stores username who created';
             $table->string('updated_by')->nullable()->comment='Stores username who updated';
             $table->boolean('is_activate')->default(false);
-            $table->softDeletes()->comment='Add Deleted at timestamp';
+            $table->softDeletes()->nullable()->comment='Add Deleted at timestamp';
             $table->timestamp('created_at')->nullable()->comment='Stores created at time';
             $table->timestamp('updated_at')->nullable()->comment='Stores updated at time';
         });

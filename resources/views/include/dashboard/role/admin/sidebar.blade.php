@@ -135,6 +135,25 @@
                 </ul>
               </div>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#navbar-features" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-features">
+                <i class="ni ni-ui-04 text-info"></i>
+                <span class="nav-link-text">Features</span>
+              </a>
+              <div class="collapse" id="navbar-features">
+                <ul class="nav nav-sm flex-column">
+                
+                <li class="nav-item">
+                    <a href="{{route('service.index')}}" class="nav-link">
+                      <span class="sidenav-mini-icon"> S </span>
+                      <span class="sidenav-normal">Services</span>
+                    </a>
+                  </li>
+
+                </ul>
+              </div>
+            </li>
    
             <li class="nav-item">
               <a class="nav-link" href="#navbar-schedule" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-page-settings">
@@ -148,6 +167,13 @@
                     <a href="{{route('scheduleofftime.index')}}" class="nav-link">
                       <span class="sidenav-mini-icon"> S </span>
                       <span class="sidenav-normal">Schedule Offtime</span>
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="{{route('schedulebreakcalender.index')}}" class="nav-link">
+                      <span class="sidenav-mini-icon"> S </span>
+                      <span class="sidenav-normal">Schedule calender</span>
                     </a>
                   </li>
               
