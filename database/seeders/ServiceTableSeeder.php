@@ -39,7 +39,7 @@ class ServiceTableSeeder extends Seeder
         $service3->description="We are ready to provide Carpenter Services you can trust!";
         $service3->color="#996600";
         $service3->position=2;
-        $service2->slug="carpenter-services";
+        $service3->slug="carpenter-services";
         $service3->save();
 
         $service4 = new Service;
@@ -49,7 +49,7 @@ class ServiceTableSeeder extends Seeder
         $service4->description="Office/Commercial Cleaners clean offices, industrial work areas, and other premises using heavy duty cleaning equipment.";
         $service4->color="#800080";
         $service4->position=3;
-        $service2->slug="office-cleaning";
+        $service4->slug="office-cleaning";
         $service4->save();
     }
 }
