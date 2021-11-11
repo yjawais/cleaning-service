@@ -8,13 +8,13 @@
                 </a>
               </li>
               <li>
-                <a href="http://presentation.creative-tim.com">
+                <a href="{{route('aboutus')}}">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="http://blog.creative-tim.com">
-                  Blog
+                <a href="{{route('privacy-policy')}}">
+                  Privacy Policy
                 </a>
               </li>
             </ul>

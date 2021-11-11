@@ -208,4 +208,29 @@ Route::post('/unit', 'WebControllers\BackendControllers\Features\PricingMethodBa
 // });
 
 
+//route for schedule break start
+Route::get('/get_schedule-break', 'WebControllers\BackendControllers\Schedule\ScheduleBreakBackendController@index')->name('schedulebreak.index')->middleware('auth');
+Route::post('/add_schedule-break', 'WebControllers\BackendControllers\Schedule\ScheduleBreakBackendController@store')->name('store.schedulebreak')->middleware('auth');
+Route::post('/schedule-break/update/{id}', 'WebControllers\BackendControllers\Schedule\ScheduleBreakBackendController@update')->name('update.schedulebreak')->middleware('auth');
+Route::get('/schedule-break/{id}', 'WebControllers\BackendControllers\Schedule\ScheduleBreakBackendController@destroy')->name('destroy.schedulebreak')->middleware('auth');
+// Route For schedule break End 
 
+//route for schedule offtime start
+Route::get('/get_schedule-offtime', 'WebControllers\BackendControllers\Schedule\ScheduleOfftimeBackendController@index')->name('scheduleofftime.index')->middleware('auth');
+Route::post('/add_schedule-offtime', 'WebControllers\BackendControllers\Schedule\ScheduleOfftimeBackendController@store')->name('store.scheduleofftime')->middleware('auth');
+Route::post('/schedule-offtime/update/{id}', 'WebControllers\BackendControllers\Schedule\ScheduleOfftimeBackendController@update')->name('update.scheduleofftime')->middleware('auth');
+Route::get('/schedule-offtime/{id}', 'WebControllers\BackendControllers\Schedule\ScheduleOfftimeBackendController@destroy')->name('destroy.scheduleofftime')->middleware('auth');
+// Route For schedule offtime End 
+
+Route::get('/get_schedulebreakcalender', 'WebControllers\BackendControllers\Schedule\ScheduleCalenderBackendController@index')->name('schedulebreakcalender.index')->middleware('auth');
+
+
+//route for landing page start
+Route::get('/user-home', 'WebControllers\FrontendControllers\LandingFrontendController@index');
+Route::get('/about-us', 'WebControllers\FrontendControllers\AboutUsFrontendController@index')->name('aboutus');
+Route::get('/privacy-policy', 'WebControllers\FrontendControllers\PrivacyPolicyFrontendController@index')->name('privacy-policy');
+//route for landing page end
+
+//route for contact us start
+Route::post('/contact-us', 'WebControllers\FrontendControllers\LandingFrontendController@contactUs')->name('contact-us');
+//route for contact us end

@@ -23,19 +23,19 @@ class LandingFrontendController extends FrontendController
    
       }
 
-      public function contactUs(Request $request,$slug) {
+      public function contactUs(Request $request) {
         try {
         $contactus = new ContactUs();
-        if($slug == 'contact-us'){
-          $name = request('fname')." ".request('lname');
+        // if($slug == 'contact-us'){
+          $name = request('name');
           $message = request('message');
           $contactus->message = $message;
-        }
-        if($slug == 'touch-with-us'){
-          $name = request('name');
-          $cname = request('company_name');
-          $contactus->company_name = $cname;
-        }
+        // }
+        // if($slug == 'touch-with-us'){
+        //   $name = request('name');
+           $cname = request('company_name');
+           $contactus->company_name = $cname;
+        // }
     
         $contact = request('contact');
         $emailid = request('emailid');
@@ -90,4 +90,6 @@ class LandingFrontendController extends FrontendController
     }
     }
     }
+    
+
     

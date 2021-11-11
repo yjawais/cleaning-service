@@ -226,34 +226,51 @@
         </div>
       </div>
     </div>
+   
     <div class="section section-contact-us text-center">
       <div class="container">
         <h2 class="title">Want to work with us?</h2>
         <p class="description">Your project is very important to us.</p>
+        <form action="{{route('contact-us')}}" method="post">
+          @csrf
+        
         <div class="row">
           <div class="col-lg-6 text-center ml-auto mr-auto col-md-8">
             <div class="input-group input-lg">
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="now-ui-icons users_circle-08"></i></span>
               </div>
-              <input type="text" class="form-control" placeholder="First Name...">
+              <input type="text" class="form-control" id="name" name="name" placeholder="Name...">
             </div>
             <div class="input-group input-lg">
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="now-ui-icons ui-1_email-85"></i></span>
               </div>
-              <input type="text" class="form-control" placeholder="Email Here...">
+              <input type="email" class="form-control" id="emailid" name="emailid" placeholder="Email Here...">
+            </div>
+            <div class="input-group input-lg">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="now-ui-icons tech_mobile"></i></span>
+              </div>
+              <input type="text" class="form-control" name="contact" id="contact" placeholder="Contact Number...">
+            </div>
+            <div class="input-group input-lg">
+               <div class="input-group-prepend">
+                <span class="input-group-text"><i class="now-ui-icons business_briefcase-24"></i></span>
+              </div>
+              
+              <input type="text" class="form-control" id="company_name" name="company_name" placeholder="company name...">
             </div>
             <div class="textarea-container">
-              <textarea class="form-control" name="name" rows="4" cols="80" placeholder="Type a message..."></textarea>
+              <textarea class="form-control" name="message" id="message" rows="4" cols="80" placeholder="Type a message..."></textarea>
             </div>
             <div class="send-button">
-              <a href="#pablo" class="btn btn-primary btn-round btn-block btn-lg">Send Message</a>
+              <button type="submit" class="btn btn-primary btn-round btn-block btn-lg">Send Message</button>
             </div>
           </div>
         </div>
+        </form>
       </div>
     </div>
-    
   </div>
 @endsection
