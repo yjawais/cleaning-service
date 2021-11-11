@@ -35,6 +35,17 @@ class RoleApiController extends ApiController
        
     }
 
+    public function getAllActiveRole($data){ 
+        try{
+            $roleDb = Role::where('is_activate',true)->latest()->get();
+            return $this->success($roleDb,200);
+        }catch(Exception $e){
+            return $this->failed('Given data is not existis.',202);
+        }
+       
+    }
+
+
     public function getRole($data){
         try{
             $roleDb = Role::find($data); 
