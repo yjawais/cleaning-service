@@ -1,21 +1,26 @@
 <?php
 
-namespace App\Http\Controllers\ApiControllers\Configration;
-
+namespace App\Http\Controllers;
+namespace App\Http\Controllers\ApiControllers\UserApiController;
 use App\Http\Controllers\ApiControllers\ApiController;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
+
+namespace App\Http\Controllers\ApiControllers;
 use App\Models\Role;
 use App\Models\User;
-use App\Models\UserDetail;
-use App\Models\RoleUser; 
-class UserConfigrationApiController extends ApiController
+use App\Models\RoleUser;
+use Exception;
+
+use Illuminate\Http\Request;
+
+class UserApiController extends ApiController
 {
+
+
      /**
-       * Prepare For UserConfigration.
+       * Prepare For User.
        *
        * @param mixed $request
-       * @author Utkarsh Junghare 
+       * @author Unnati Gawhale
        * Response ={
        *    Success:[
        *    "StatusCode":200,
@@ -28,40 +33,61 @@ class UserConfigrationApiController extends ApiController
        *            }
        *             
        */
-      public function getAllUsers($data){ 
+
+    // This function will display all user details from users table in the userIndex page
+    // GetAllUser function starts
+
+    public function getAllUser ($data){  
+       
         try{
-            $userDb = User::latest()->get();
-            foreach ($userDb as $user){
-              $user['role'] = RoleUser::select('role_id','is_activate')->where('user_id', $user->id)->first();
-              $user['role_type'] = Role::select('name')->where('id', $user->role['role_id'])->first()['name'];
+            $role_id=Role::select('id')->where('name','user')->first()['id'];
+            $role_users=RoleUser::select('user_id')->where('role_id',$role_id)->get();
+        //    dd($role_users);3,9,10,11,12,13
+
+            foreach ($role_users as $role_user){
+              $role_user['user'] = User::where('id', $role_user->user_id)->first();
+              //dd($role_user);
                   }
-            return $this->success($userDb,200);
+            return $this->success($role_users,200);
         }catch(Exception $e){
             return $this->failed('Given data is not existis.',202);
         }
        
     }
+    // GetAllUser  function ends
 
-    public function getUser($data){
+
+    // This function will display specific user  detail depending to their id on the userShow and userEdit page
+    // GetUser  function starts
+
+    public function getUser ($data){
         try{
-            $userDb = User::find($data); 
-           // dd($userDb);
-            return $this->success($userDb,200);
+         //   $role_users = User::find($data); 
+            $decodedData= json_decode($data,true); 
+            $role_users = User::where('id',$decodedData['id'])->first(); 
+          // dd($role_users);
+            return $this->success($role_users,200);
         }catch(Exception $e){
             return $this->failed('Given data is not existis.',202);
         }
        
     }
+    // GetUser  function ends
 
-    public function storeUser($data){ 
+
+    // This function contains store data logic for the user when clicked on submit button on userCreate page with respect to the partricular user id
+    // StoreUser  function starts
+
+    public function storeUser ($data){ 
         try{ 
              $decodedData= json_decode($data,true); 
              $user = new User();
              $user_type = $decodedData['user_type'];
              $user->fname = $decodedData['fname'];
              $user->lname = $decodedData['lname'];
-             $user->email = $decodedData['email'];
-             $user->password = Hash::make($decodedData['password']);
+            $user->email = $decodedData['email'];
+            $user->mobile_number = $decodedData['mobile_number'];
+         //   $user->password = Hash::make($decodedData['password']);
              $user->save(); 
              $user->roles()
              ->attach(Role::where('name', $user_type)->first());  
@@ -71,14 +97,19 @@ class UserConfigrationApiController extends ApiController
         }
        
     }
+    // StoreUser  function ends
+
  
-    public function updateUser($data){ 
+    // This function contains update data logic for the user  when clicked on edit button on userIndex page according to the partricular user id
+    // UpdateUser function starts
+
+    public function updateUser ($data){ 
        try{
              $decodedData= json_decode($data,true);
             if($decodedData['status'] === 'true'){
                  $is_activate=true;
                }
-               else  
+               else 
                 $is_activate = false;
                 User::query()->where('id', $decodedData['id'])->update([
                 'fname' => $decodedData['fname'],
@@ -97,8 +128,13 @@ class UserConfigrationApiController extends ApiController
         }
        
     } 
+    // UpdateUser  function ends
 
-    public function deleteUser($data){ 
+
+    // This function will delete the user when clicked on delete button on userIndex page according to the partricular user id
+    // DeleteUser  function starts
+   
+    public function deleteUser ($data){ 
         try{
              $decodedData= json_decode($data,true);
              $model =  RoleUser::find($decodedData['id']);
@@ -114,4 +150,6 @@ class UserConfigrationApiController extends ApiController
         }
        
     }
+    // DeleteUser  function ends
+
 }

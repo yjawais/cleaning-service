@@ -45,6 +45,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'WebControllers\FrontendControllers\LandingFrontendController@index');
 
 
+// Route For Staff Start
+Route::get('/staff', 'WebControllers\BackendControllers\StaffBackendController@index')->name('superadmin.staff')->middleware('auth');
+Route::get('/staff/create', 'WebControllers\BackendControllers\StaffBackendController@create')->name('superadmin.staff.create')->middleware('auth');
+Route::post('/staff', 'WebControllers\BackendControllers\StaffBackendController@store')->name('superadmin.staff.store')->middleware('auth');
+Route::get('/staff/view/{id}', 'WebControllers\BackendControllers\StaffBackendController@show')->name('superadmin.staff.show')->middleware('auth');
+Route::get('/staff/edit/{id}', 'WebControllers\BackendControllers\StaffBackendController@edit')->name('superadmin.staff.edit')->middleware('auth');
+Route::get('/staff/update/{id}', 'WebControllers\BackendControllers\StaffBackendController@update')->name('superadmin.staff.update')->middleware('auth');
+Route::get('/staff/{id}', 'WebControllers\BackendControllers\StaffBackendController@destroy')->name('superadmin.staff.destroy')->middleware('auth');
+// Route For staff End 
+
 // Route For Language Code Start
 
 Route::get('/languagecode', 'WebControllers\BackendControllers\Configration\LanguageCodeBackendController@index')->name('superadmin.languagecode')->middleware('auth');
@@ -67,6 +77,16 @@ Route::post('/user-configration/update/{id}', 'WebControllers\BackendControllers
 Route::get('/user-configration/{id}', 'WebControllers\BackendControllers\Configration\UserConfigrationBackendController@destroy')->name('superadmin.user.destroy')->middleware('auth');
 // Route For user End 
 
+// Route For User Start
+Route::get('/user', 'WebControllers\BackendControllers\UserBackendController@index')->name('user')->middleware('auth');
+Route::get('/user/create', 'WebControllers\BackendControllers\UserBackendController@create')->name('user.create')->middleware('auth');
+Route::post('/user', 'WebControllers\BackendControllers\UserBackendController@store')->name('user.store')->middleware('auth');
+Route::get('/user/view/{id}', 'WebControllers\BackendControllers\UserBackendController@show')->name('user.show')->middleware('auth');
+Route::get('/user/edit/{id}', 'WebControllers\BackendControllers\UserBackendController@edit')->name('user.edit')->middleware('auth');
+Route::get('/user/update/{id}', 'WebControllers\BackendControllers\UserBackendController@update')->name('user.update')->middleware('auth');
+Route::get('/user/{id}', 'WebControllers\BackendControllers\UserBackendController@destroy')->name('user.destroy')->middleware('auth');
+// Route For user End 
+
 // Route For faq Start
 Route::get('/getfaq', 'WebControllers\BackendControllers\Features\FaqBackendController@index')->name('index.faq')->middleware('auth');
 Route::post('/addfaq', 'WebControllers\BackendControllers\Features\FaqBackendController@store')->name('store.faq')->middleware('auth');
@@ -74,6 +94,11 @@ Route::post('/faq/update/{id}', 'WebControllers\BackendControllers\Features\FaqB
 Route::get('/faq/{id}', 'WebControllers\BackendControllers\Features\FaqBackendController@destroy')->name('destroy.faq')->middleware('auth');
 // Route For faq End 
 
+// Route For Payment
+Route::get('/payments', 'WebControllers\BackendControllers\Features\PaymentBackendController@index')->name('payment.index')->middleware('auth');
+Route::get('/payment/view/{id}', 'WebControllers\BackendControllers\Features\PaymentBackendController@show')->name('payment.show')->middleware('auth');
+Route::get('/payment/{id}', 'WebControllers\BackendControllers\Features\PaymentBackendController@destroy')->name('payment.destroy')->middleware('auth');
+//Route For Payment End
 
 // Route For Sms Templet Start
  Route::get('/smstemplet', 'WebControllers\BackendControllers\Features\SmsTemplateBackendController@index')->name('smstemplet.view')->middleware('auth');
@@ -98,15 +123,14 @@ Route::get('/slider/edit/{slug}', 'WebControllers\BackendControllers\Features\Sl
 Route::get('/slider/view/{slug}', 'WebControllers\BackendControllers\Features\SliderBackendController@show')->name('slider.show')->middleware('auth');
 //End for slider
 
-// // Route For Social setting Start
-// Route::get('/social', 'Features\SocialSettingController@index')->name('social.index')->middleware('auth');
-// Route::get('/social/create', 'Features\SocialSettingController@create')->name('social.create')->middleware('auth');
-// Route::post('/social', 'Features\SocialSettingController@store')->middleware('auth');
-// Route::get('/social/view/{slug}', 'Features\SocialSettingController@show')->name('social.show')->middleware('auth');
-// Route::get('/social/edit/{slug}', 'Features\SocialSettingController@edit')->name('social.edit')->middleware('auth');
-// Route::post('/social/update/{id}', 'Features\SocialSettingController@update')->name('social.update')->middleware('auth');
-// Route::get('/social/{slug}', 'Features\SocialSettingController@destroy')->name('social.destroy')->middleware('auth');
-// // Route For  Social setting End 
+// Route For Social setting Start
+Route::get('/social', 'WebControllers\BackendControllers\Configration\SocialSettingBackendController@index')->name('social.index')->middleware('auth');
+Route::get('/social/create', 'WebControllers\BackendControllers\Configration\SocialSettingBackendController@create')->name('social.create')->middleware('auth');
+Route::post('/social', 'WebControllers\BackendControllers\Configration\SocialSettingBackendController@store')->middleware('auth');
+Route::get('/social/view/{id}', 'WebControllers\BackendControllers\Configration\SocialSettingBackendController@show')->name('social.show')->middleware('auth');
+Route::get('/social/edit/{id}', 'WebControllers\BackendControllers\Configration\SocialSettingBackendController@edit')->name('social.edit')->middleware('auth');
+Route::post('/social/update/{id}', 'WebControllers\BackendControllers\Configration\SocialSettingBackendController@destroy')->name('social.destroy')->middleware('auth');
+// Route For  Social setting End 
 
 
 // Route For Services
