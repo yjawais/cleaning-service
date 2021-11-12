@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Carbon\Carbon;
 
 class CreateBookingsTable extends Migration
 {
@@ -17,8 +18,10 @@ class CreateBookingsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('order_id')->comment='Order id';
             $table->unsignedBigInteger('client_id')->unsigned()->nullable()->comment = 'foreign key of client id';
+            $table->integer('pincode')->nullable()->comment='Pincode';
             $table->foreign('client_id')->references('id')->on('users');
-            $table->date('order_date')->comment='date of order';
+            $table->date('order_date')->default(Carbon::now())->comment='date of order';
+            $table->string('booking_duration')->nullable()->comment='booking duation';
             $table->dateTime('booking_date_time')->comment='date and time of booking';
             $table->unsignedBigInteger('service_id')->unsigned()->nullable()->comment = 'foreign key of serviceid';
             $table->foreign('service_id')->references('id')->on('services');
