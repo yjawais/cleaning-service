@@ -26,6 +26,11 @@
             </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li class="active">
+                <a href="{{route('booking')}}">
+                     Book An Appointment
+                </a>
+            </li>
             <li class="active">
                 <a href="#">
                      Discover

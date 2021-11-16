@@ -234,3 +234,7 @@ Route::get('/privacy-policy', 'WebControllers\FrontendControllers\PrivacyPolicyF
 //route for contact us start
 Route::post('/contact-us', 'WebControllers\FrontendControllers\LandingFrontendController@contactUs')->name('contact-us');
 //route for contact us end
+
+//route for appointment booking at user level
+Route::get('/booking/create', 'WebControllers\FrontendControllers\AppointmentFrontendController@index')->name('booking')->middleware('auth');
+Route::post('/booking', 'WebControllers\FrontendControllers\AppointmentFrontendController@store')->name('booking.store')->middleware('auth');
